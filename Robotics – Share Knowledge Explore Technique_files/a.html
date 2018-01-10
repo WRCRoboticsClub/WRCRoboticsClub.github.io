@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Robotics &#8211; Share Knowledge Explore Technique</title>
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Robotics &raquo; Feed" href="http://localhost:8081/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="Robotics &raquo; Comments Feed" href="http://localhost:8081/?feed=comments-rss2" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:8081\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='bootstrap-css'  href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awsom-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awsome-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CRoboto+Slab%3A400%2C700%7CMaterial+Icons&#038;ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='material-kit-css'  href='http://localhost:8081/wp-content/themes/robotics/css/material-kit.min.css?ver=4.8' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='http://localhost:8081/?rest_route=/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost:8081/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost:8081/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class=" hfeed">
+<nav class="navbar navbar-primary navbar-transparent navbar-absolute">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href=" http://localhost:8081">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="http://imageog.flaticon.com/icons/png/512/36/36411.png?size=300x300f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt="Creative Tim Logo">
+                </div>
+                <div class="brand" style="
+  font-family: 'Francois One', 'Helvetica';">
+                    Robotics <br>
+                    Share Knowledge Explore Technique
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="example" >
+            <div class="nav navbar-nav  navbar-right"><ul>
+<li class="page_item page-item-2"><a href="http://localhost:8081/?page_id=2"> Sample Page</a></li>
+</ul></div>
+        </div>
+    </div>
+</nav>
+
+
+
+	<div class="wrapper">
+	<div class="parallax filter-gradient blue" data-color="red">
+		<div class="parallax-background">
+			<img class="parallax-background-image " src="">
+
+		</div>
+		<div class= "container">
+			<div class="row">
+
+				<div class="col-md-7 col-lg-7 ">
+					<div class="description ">
+						<h2  style="
+  font-family: 'Francois One', 'Helvetica';">
+							<span class="typed"></span>
+						</h2>
+						<br>
+						<div>
+							<button class="btn btn-fill btn-neutral">
+								<i class="fa fa-users"></i> WHO WE ARE ?
+							</button>
+							<button class="btn btn-fill btn-neutral">
+								<i class="fa fa-terminal"></i> WHAT WE DO ?
+							</button>
+							<button class="btn btn-fill btn-neutral">
+								<i class="fa fa-angellist"></i>EVENTS
+							</button>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5  hidden-xs hidden-sm">
+					<div class="parallax-image">
+						<img class="phone" src="http://localhost:8081/wp-content/themes/robotics/img/robot.png"/>
+					</div>
+				</div>
+				<br>
+				<br>
+
+			</div>
+
+		</div>
+	</div>
+	</div>
+	<div class="projects-1" id="projects-1" style="background-color: white;">
+
+		<div class="container" >
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<h2 class="title">Our Projects</h2>
+
+					<ul class=" nav navn nav-pills nav-pills-rose  navn-pills navn-pills-rose">
+						<li class="active"><a href="#pill1" data-toggle="tab">All</a></li>
+						<li><a href="#pill2" data-toggle="tab">Computer</a></li>
+						<li><a href="#pill3" data-toggle="tab">Mechanical</a></li>
+						<li><a href="#pill3" data-toggle="tab">Electrical</a></li>
+						<li><a href="#pill5" data-toggle="tab">Electronics</a></li>
+					</ul>
+					<div class="tab-content tab-space">
+						<div class="tab-pane active" id="pill1">
+
+						</div>
+						<div class="tab-pane" id="pill2">
+
+						</div>
+						<div class="tab-pane" id="pill3">
+
+						</div>
+						<div class="tab-pane" id="pill4">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+
+				</div>
+
+				<div class="col-md-6">
+
+					<div class="card card-raised card-background" style="background-image: url('http://localhost:8081/wp-content/uploads/2018/01/Screen-Shot-2017-12-22-at-15.01.33.png')">
+
+						<div class="card-content">
+							<h6 class="category text-info">Uncategorized</h6>
+							<a href="http://localhost:8081/?project=sajdhkajsdh">
+								<h3 class="card-title">sajdhkajsdh</h3>
+							</a>
+							<div class="card-description">
+								<p>jsdhkajsdhkajsh</p>
+							</div>
+							<a href="http://localhost:8081/?project=sajdhkajsdh" class="btn btn-info btn-round">
+									<i class="material-icons">build</i> View Project
+							</a>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+
+		</div>
+	</div>
+	<div class="blogs-1" id="blogs-1" style="background-color: white;">
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-10 col-md-offset-1">
+					<h2 class="title">Latest Blogposts</h2>
+
+					<br />
+					
+
+
+    <div class="card card-plain card-blog">
+        <div class="row">
+    
+            <div class="col-md-5 hidden-md-down">
+                <div class="card-image">
+                    <img class="img img-raised" src="
+    " /></div>
+            </div>
+       
+            <div class="col-md-7">
+                <a class="category text-info" href="http://localhost:8081/?cat=1" rel="category">Uncategorized</a><!--                <h6 class="category text-danger">-->
+<!--                    <i class="material-icons">trending_up</i> Trending-->
+<!--                </h6>-->
+                <h3 class="card-title">
+                    <a href="http://localhost:8081/?p=1">Hello world!</a>
+                </h3>
+                <div class="card-description">
+                    <p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+</div>
+                <p class="author">
+                    by <a href="#pablo"><b>Mike Butcher</b></a>, 2 days ago
+                </p>
+            </div>
+
+                
+            
+        </div>
+    </div>
+
+    
+
+
+
+				</div>
+
+			</div>
+
+
+
+		</div>
+	</div>
+	<div class="contactus-1 section-image" style="background-image: url('https://lh3.googleusercontent.com/RUtYzqzmoLjCN3SkU4iArSQ3uKkF-XqXo3awhCtajPZODbY79qtSxH-h-VYqBhAgMNAeuLLqs6qLPNx4HujemDBAJdE4qUFb5mVYS_PT6f9U8UwQBPv3Iq-XUfuYO_-06qgPu4ir0JeRONz4cHjnjsbnDNyOiXRRmfQx4i-6lbkE4x6GWSbzVrjQbqe79BbPsoI0YmKui07o-pASFwVnUyogJYHIwkrcbRM7w-wfjaBRFpXm6RrWlVD5zly3-ATfsmalB9waptK-4gpOg3jQ_RCmL2G47ounRjde-QAHlJOf0zDtw8vF3wr8ZfHfkIacuu8X4gaDmEHEdr_1hEYM0kjJItfVn-qgSxoFUc1wD5N5j2Jt5TlcPQrX55XW9Kpre9s579-bEbiJ43lvAuGocDU5k12MA8nSZpabh94iN5n218MYj6yujFLOy_4clMfATwefo4XTOB97ym9RcClgKP8wgFMCslGN6NDeQ42F-PYzzQJXgJgzDT9tUykd28giGa7bAD_FN_en2umOXj6ZVIVAgFrDrwKZhyfTqyrZaEw18JiyCywZdclZSJZhScIKAulZfBbxK06HnRvUTY4s2MMe_XnmJJj5r6tLdwOEtMjPaAxV=w1154-h649-no')">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<h2 class="title">Get in Touch</h2>
+					<h5 class="description">You need more information? Check our project and blogs.</h5>
+					<div class="info info-horizontal">
+						<div class="icon icon-primary">
+							<i class="material-icons">pin_drop</i>
+						</div>
+						<div class="description">
+							<h4 class="info-title">Find us at the office</h4>
+							<p> Pokhara , lamachaur-16<br>
+								Humanity Departmant<br>
+								Paschimanchal Campus
+							</p>
+						</div>
+					</div>
+					<div class="info info-horizontal">
+						<div class="icon icon-primary">
+							<i class="material-icons">phone</i>
+						</div>
+						<div class="description">
+							<h4 class="info-title">Email:</h4>
+							<p> wrcrobo@gmail.com<br>
+								
+							</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-5 col-md-offset-2">
+					<div class="card card-contact">
+						<form role="form" id="contact-form" method="post">
+							<div class="header header-raised header-primary text-center">
+								<h4 class="card-title">Contact Us</h4>
+							</div>
+							<div class="card-content">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group label-floating">
+											<label class="control-label">First name</label>
+											<input type="text" name="name" class="form-control">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group label-floating">
+											<label class="control-label">Last name</label>
+											<input type="text" name="name" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="form-group label-floating">
+									<label class="control-label">Email address</label>
+									<input type="email" name="email" class="form-control"/>
+								</div>
+								<div class="form-group label-floating">
+									<label class="control-label">Your message</label>
+									<textarea name="message" class="form-control" id="message" rows="6"></textarea>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="optionsCheckboxes">
+												I'm not a robot
+											</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<button type="submit" class="btn btn-primary pull-right">Send Message</button>
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fixed-plugin">
+		<div class="dropdown ">
+			<a href="#" data-toggle="dropdown">
+				<i style= "color: #FFFFFF;
+    /* background-color: rgba(0,0,0,.2); */
+    padding: 10px;
+    border-radius: 0 0 6px 6px;"class="fa fa-bell fa-2x"> </i>
+			</a>
+			<ul class="dropdown-menu">
+				<li class="header-title">Notifications</li>
+
+
+				<li class="active">
+					<a href="landing-page.html" class="switch">
+						<img alt="..." src="assets/img/blue.jpg">
+						<p class="pull-left">Awesome Landing Page</p>
+					</a>
+				</li>
+
+				<li class="">
+					<a href="landing-page-showcase-1.html" class="switch">
+						<img alt="..." src="assets/img/blue.jpg">
+						<p class="pull-left">Showcase 1</p>
+					</a>
+				</li>
+				<li class="">
+					<a href="landing-page-showcase-2.html" class="switch">
+						<img alt="..." src="assets/img/blue.jpg">
+						<p class="pull-left">Showcase 2</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	</div><!-- #content -->
+
+<footer class="footer">
+	<div class="container">
+		<nav class="pull-left">
+			<ul>
+				<li>
+					<a href="#">
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Contributor
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Project
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Blog
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="social-area pull-right">
+			<a class="btn btn-social btn-facebook btn-simple">
+				<i class="fa fa-facebook-square"></i>
+			</a>
+			<a class="btn btn-social btn-twitter btn-simple">
+				<i class="fa fa-twitter"></i>
+			</a>
+			<a class="btn btn-social btn-pinterest btn-simple">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</div>
+		<div class="copyright">
+			&copy; 2017 <a href="http://www.wordpress.dev/">Robotics Club</a>
+		</div>
+	</div>
+</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type='text/javascript' src='http://localhost:8081/wp-content/themes/robotics/js/jquery-1.10.2.js?ver=20151215'></script>
+<script type='text/javascript' src='http://localhost:8081/wp-content/themes/robotics/js/jquery-ui-1.10.4.custom.min.js?ver=20151215'></script>
+<script type='text/javascript' src='http://localhost:8081/wp-content/themes/robotics/js/bootstrap.js?ver=20151215'></script>
+<script type='text/javascript' src='http://localhost:8081/wp-content/themes/robotics/js/awesome-landing-page.js?ver=20151215'></script>
+<script type='text/javascript' src='http://localhost:8081/wp-content/themes/robotics/js/typed.js?ver=20151215'></script>
+<script type='text/javascript' src='http://localhost:8081/wp-content/themes/robotics/js/navigation.js?ver=20151215'></script>
+<script type='text/javascript' src='http://localhost:8081/wp-content/themes/robotics/js/skip-link-focus-fix.js?ver=20151215'></script>
+<script type='text/javascript' src='http://localhost:8081/wp-includes/js/wp-embed.min.js?ver=4.8'></script>
+<script>
+	$(function(){
+		$(".typed").typed({
+			strings: ["Share Knowledge ", "Explore Technique "],
+			typeSpeed: 100
+		});
+	});
+	$(document).ready( function() {
+
+		$('#myCarousel').on('click', '.nav a', function() {
+			clickEvent = true;
+			$('.nav li').removeClass('active');
+			$(this).parent().addClass('active');
+
+		});
+	});
+</script>
+
+</body>
+</html>
