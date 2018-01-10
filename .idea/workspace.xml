@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="873feabc-3883-4777-9663-72ce79a7558d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/git.html" />
-      <change beforePath="$PROJECT_DIR$/git/index.html" afterPath="$PROJECT_DIR$/git.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/git.html" afterPath="$PROJECT_DIR$/git/index.html" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,18 +18,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="290" column="63" lean-forward="false" selection-start-line="290" selection-start-column="63" selection-end-line="290" selection-end-column="63" />
+            <state relative-caret-position="342">
+              <caret line="192" column="18" lean-forward="true" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1515610943692" expanded="false" signature="11053:11190" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="git.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/git.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/git/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-792">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -88,6 +87,11 @@
               <item name="WRCRoboticsClub.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="WRCRoboticsClub.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="WRCRoboticsClub.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WRCRoboticsClub.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="git" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -133,12 +137,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1515603984117</updated>
-      <workItem from="1515603985971" duration="5315000" />
+      <workItem from="1515603985971" duration="5483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5315000" />
+    <option name="totallyTimeSpent" value="5483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -183,7 +187,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/git.html">
+    <entry file="file://$PROJECT_DIR$/git/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-792">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -193,11 +197,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="290" column="63" lean-forward="false" selection-start-line="290" selection-start-column="63" selection-end-line="290" selection-end-column="63" />
+        <state relative-caret-position="342">
+          <caret line="192" column="18" lean-forward="true" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1515610943692" expanded="false" signature="11053:11190" ph="..." />
           </folding>
         </state>
       </provider>
