@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="873feabc-3883-4777-9663-72ce79a7558d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/git/index.html" afterPath="$PROJECT_DIR$/git/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,12 +13,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="331" column="16" lean-forward="true" selection-start-line="331" selection-start-column="16" selection-end-line="331" selection-end-column="16" />
+            <state relative-caret-position="329">
+              <caret line="105" column="112" lean-forward="false" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="112" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/git/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="106" column="48" lean-forward="false" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1515609802306" expanded="false" signature="22362:22375" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,6 +45,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/sajdhkajsdh – Robotics.html" />
+        <option value="$PROJECT_DIR$/git/git.html" />
+        <option value="$PROJECT_DIR$/git/index.html" />
       </list>
     </option>
   </component>
@@ -70,6 +86,11 @@
               <item name="WRCRoboticsClub.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="WRCRoboticsClub.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="WRCRoboticsClub.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WRCRoboticsClub.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="git" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -80,6 +101,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/git" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -106,12 +132,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1515603984117</updated>
-      <workItem from="1515603985971" duration="834000" />
+      <workItem from="1515603985971" duration="4172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="834000" />
+    <option name="totallyTimeSpent" value="4172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -150,9 +176,20 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="331" column="16" lean-forward="true" selection-start-line="331" selection-start-column="16" selection-end-line="331" selection-end-column="16" />
+        <state relative-caret-position="329">
+          <caret line="105" column="112" lean-forward="false" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="112" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/git/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="106" column="48" lean-forward="false" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1515609802306" expanded="false" signature="22362:22375" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
