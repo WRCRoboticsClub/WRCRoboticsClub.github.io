@@ -196,7 +196,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" @click="open=false"  data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" @click="apply()" v-show="name && faculty && year && facebook && phone">Apply </button>
+                    <button type="button" class="btn btn-primary" @click="apply()" v-show="name && faculty && year && facebook && phone">{{text}} </button>
                 </div>
             </div>
         </div>
@@ -242,7 +242,7 @@
                         <h4 style="font-size: medium ; font-family: initial" v-show="project.type == 1 && project.tasks.length != 0 ">Tasks</h4>
                         <h4 style="font-size: medium ;font-family: initial" v-show="project.type == 0 && project.tasks.length != 0">Manpower</h4>
                         <ul>
-                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')"  class="btn btn-sm btn-success">apply</span></li>
+                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')"  class="btn btn-sm btn-success">{{text}}</span></li>
                         </ul>
                     </div>
 
@@ -315,6 +315,7 @@
                 faculty : null,
                 facebook : null ,
                 phone : null ,
+                text : null,
 
                 projects: [
                     {
@@ -429,8 +430,11 @@
             add(value) {
                this.selected = value;
                this.open = true ;
+                this.text = "Apply"
+
             },
             apply() {
+                this.text = "Wait Applying";
                 axios.post('https://wrcrobotics.herokuapp.com/api/message', {
                     'name': this.name,
                     'year': this.year,
@@ -447,13 +451,16 @@
                     content: 'Applied to ' + this.selected,
                 });
 
+
             })
             .catch(err => {
                     this.$notify({
                     type: 'warning',
                     title: 'Warning!',
                     content: 'Please check your input and try again Or Refresh Once.'
-                })
+                });
+
+
             })
             }
         }
