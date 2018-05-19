@@ -149,6 +149,32 @@
 </div>
 <div  class="main main-raised">
 
+
+    <div v-if="verify" class="modal show" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Wait for response</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    I am {{name}} studying  {{faculty}} of  {{year}} Year and I want to participate in project in
+                    <span class="badge">{{selected}}</span>
+                    <br>
+                    <br>
+                    Facebook : {{facebook}}
+                    <br>
+                    Mobile : {{phone}}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @click="verify=false"  data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div v-if="open" class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -170,7 +196,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" @click="open=false"  data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" v-show="name && faculty && year">Apply </button>
+                    <button type="button" class="btn btn-primary" @click="apply()" v-show="name && faculty && year && facebook && phone">Apply </button>
                 </div>
             </div>
         </div>
@@ -282,6 +308,7 @@
         data: function () {
             return {
                 open: false,
+                verify : false,
                 selected : null ,
                 name : null ,
                 year : null,
@@ -403,8 +430,31 @@
                this.selected = value;
                this.open = true ;
             },
-            submit() {
+            apply() {
+                axios.post('http://wrcrobotics.herokuapp.com/api/message', {
+                    'name': this.name,
+                    'year': this.year,
+                    'faculty': this.faculty,
+                    'body' : this.selected + "Facebook :"+this.facebook+" Phone : "+ this.phone
 
+                })
+                    .then(res => {
+
+                this.open = false;
+                this.verify = true;
+                this.$notify({
+                    title: 'Applied',
+                    content: 'Applied to ' + this.selected,
+                });
+
+            })
+            .catch(err => {
+                    this.$notify({
+                    type: 'warning',
+                    title: 'Warning!',
+                    content: 'Please check your input and try again Or Refresh Once.'
+                })
+            })
             }
         }
     });
