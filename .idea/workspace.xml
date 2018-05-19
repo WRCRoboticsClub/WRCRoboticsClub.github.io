@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="873feabc-3883-4777-9663-72ce79a7558d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training/rainy.html" beforeDir="false" afterPath="$PROJECT_DIR$/training/rainy.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="rainy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/training/rainy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3470">
-              <caret line="200" column="18" lean-forward="true" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
+            <state relative-caret-position="147">
+              <caret line="453" column="37" selection-start-line="453" selection-start-column="37" selection-end-line="453" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -131,12 +130,12 @@
       <workItem from="1526717685992" duration="8701000" />
       <workItem from="1526728565905" duration="4027000" />
       <workItem from="1526736833382" duration="3145000" />
-      <workItem from="1526747330772" duration="566000" />
+      <workItem from="1526747330772" duration="1323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22543000" />
+    <option name="totallyTimeSpent" value="23300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
@@ -151,7 +150,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32755905" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3270142" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -299,8 +298,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/training/rainy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3470">
-          <caret line="200" column="18" lean-forward="true" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
+        <state relative-caret-position="147">
+          <caret line="453" column="37" selection-start-line="453" selection-start-column="37" selection-end-line="453" selection-end-column="37" />
         </state>
       </provider>
     </entry>

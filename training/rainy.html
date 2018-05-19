@@ -175,7 +175,7 @@
             </div>
         </div>
     </div>
-    <div v-if="open" class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div v-if="open && nverify" class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -223,12 +223,12 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h3 id="pablo" class="title"> RUNNING PROJECTS :</h3>
                     <div style="padding:20px" v-for="(project , key) in running">
-                       <h4 style="font-size: x-large">{{key+1}}) {{project.title}} <span v-show="project.description != null ">:</span> <span v-show="project.tasks.length == 0 " @click="add(project.title)" class="btn btn-sm btn-success">apply</span> </h4>
+                       <h4 style="font-size: x-large">{{key+1}}) {{project.title}} <span v-show="project.description != null ">:</span> <span v-show="project.tasks.length == 0 "   @click="add(project.title)" class="btn btn-sm btn-success">apply</span> </h4>
                         <p>{{project.description}}</p>
                         <h4 style="font-size: medium ; font-family: initial" v-show="project.type == 1 && project.tasks.length != 0 ">Tasks</h4>
                         <h4 style="font-size: medium ;font-family: initial" v-show="project.type == 0 && project.tasks.length != 0">Manpower</h4>
                         <ul>
-                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')"  class="btn btn-sm btn-success">apply</span></li>
+                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')" v-if="nverify" class="btn btn-sm btn-success">Apply</span></li>
                         </ul>
                     </div>
 
@@ -242,7 +242,7 @@
                         <h4 style="font-size: medium ; font-family: initial" v-show="project.type == 1 && project.tasks.length != 0 ">Tasks</h4>
                         <h4 style="font-size: medium ;font-family: initial" v-show="project.type == 0 && project.tasks.length != 0">Manpower</h4>
                         <ul>
-                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')"  class="btn btn-sm btn-success">{{text}}</span></li>
+                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')" v-if="nverify" class="btn btn-sm btn-success">Apply</span></li>
                         </ul>
                     </div>
 
@@ -309,6 +309,7 @@
             return {
                 open: false,
                 verify : false,
+                nverify : true,
                 selected : null ,
                 name : null ,
                 year : null,
@@ -446,6 +447,11 @@
 
                 this.open = false;
                 this.verify = true;
+                this.name = null;
+                this.year = null ;
+                this.facebook = null ;
+                this.phone = null ;
+                this.nverify = false;
                 this.$notify({
                     title: 'Applied',
                     content: 'Applied to ' + this.selected,
