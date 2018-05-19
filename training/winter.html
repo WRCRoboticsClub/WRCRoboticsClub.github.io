@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Git and GitLab Training – Robotics</title>
+    <link rel="dns-prefetch" href="http://maxcdn.bootstrapcdn.com/">
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="http://s.w.org/">
+    <link rel="alternate" type="application/rss+xml" title="Robotics » Feed" href="http://localhost:8081/?feed=rss2">
+    <link rel="alternate" type="application/rss+xml" title="Robotics » Comments Feed"
+          href="http://localhost:8081/?feed=comments-rss2">
+    <link rel="alternate" type="application/rss+xml" title="Robotics » sajdhkajsdh Comments Feed"
+          href="http://localhost:8081/?feed=rss2&amp;p=7">
+    <script type="text/javascript">
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/",
+            "svgExt": ".svg",
+            "source": {"concatemoji": "http:\/\/localhost:8081\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}
+        };
+        !function (a, b, c) {
+            function d(a) {
+                var b, c, d, e, f = String.fromCharCode;
+                if (!k || !k.fillText) return !1;
+                switch (k.clearRect(0, 0, j.width, j.height), k.textBaseline = "top", k.font = "600 32px Arial", a) {
+                    case"flag":
+                        return k.fillText(f(55356, 56826, 55356, 56819), 0, 0), b = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 56826, 8203, 55356, 56819), 0, 0), c = j.toDataURL(), b === c && (k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447), 0, 0), b = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447), 0, 0), c = j.toDataURL(), b !== c);
+                    case"emoji4":
+                        return k.fillText(f(55358, 56794, 8205, 9794, 65039), 0, 0), d = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55358, 56794, 8203, 9794, 65039), 0, 0), e = j.toDataURL(), d !== e
+                }
+                return !1
+            }
+
+            function e(a) {
+                var c = b.createElement("script");
+                c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
+            }
+
+            var f, g, h, i, j = b.createElement("canvas"), k = j.getContext && j.getContext("2d");
+            for (i = Array("flag", "emoji4"), c.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, h = 0; h < i.length; h++) c.supports[i[h]] = d(i[h]), c.supports.everything = c.supports.everything && c.supports[i[h]], "flag" !== i[h] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[i[h]]);
+            c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () {
+                c.DOMReady = !0
+            }, c.supports.everything || (g = function () {
+                c.readyCallback()
+            }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function () {
+                "complete" === b.readyState && c.readyCallback()
+            })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    <script src="sajdhkajsdh%20%E2%80%93%20Robotics_files/wp-emoji-release.js" type="text/javascript"
+            defer="defer"></script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel="stylesheet" id="bootstrap-css"
+          href="../Robotics%20–%20Share%20Knowledge%20Explore%20Technique_files/bootstrap.css" type="text/css"
+          media="all">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" id="font-awsome-css"
+          href="../Robotics%20–%20Share%20Knowledge%20Explore%20Technique_files/css.css" type="text/css"
+          media="all">
+    <link rel="stylesheet" id="material-kit-css"
+          href="../Robotics%20–%20Share%20Knowledge%20Explore%20Technique_files/material-kit.css" type="text/css"
+          media="all">
+    <link rel="https://api.w.org/" href="http://localhost:8081/?rest_route=/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://robotics.wrc.edu.np/">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+          href="http://robotics.wrc.edu.np/wp-includes/wlwmanifest.xml">
+    <meta name="generator" content="WordPress 4.8">
+    <style type="text/css">.recentcomments a {
+        display: inline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }</style>
+</head>
+
+<body  class="project-template-default single blog-post single-project postid-7">
+<div id="app">
+<nav class="navbar navbar-primary navbar-transparent navbar-absolute">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://robotics.wrc.edu.np/">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="../Robotics%20–%20Share%20Knowledge%20Explore%20Technique_files/36411.png"
+                             alt="Creative Tim Logo">
+                    </div>
+                    <div class="brand" style="
+  font-family: 'Francois One', 'Helvetica';">
+                        Robotics <br>
+                        Share Knowledge Explore Technique
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="example">
+            <div class="nav navbar-nav  navbar-right">
+                <ul>
+                    <!--<li class="page_item page-item-2"><a href="http://localhost:8081/?page_id=2"> Sample Page</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="page-header header-filter" data-parallax="true"
+     style="background-image: url('http://2.bp.blogspot.com/-HAUEGvtdnZ8/WIuycfwnzGI/AAAAAAAAAVg/kAoreatIcckhPxJTR8lTAHI8nN9cf7SXACK4B/s1600/Pokhra.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h1 class="title">Rainy Session</h1><!--                <h1 class="title">Europa Clipper</h1>-->
+                <h4><p>This rainy season : Don't get Sick , Get SMART </p>
+                </h4>
+                <br>
+                <a href="#pablo" class="btn btn-rose btn-round btn-lg">
+                    <i class="material-icons">format_align_left</i> Read MORE
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div  class="main main-raised">
+
+    <div v-if="open" class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Apply for session</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    I am <input v-model="name" placeholder="name" type="text"> studying  <input v-model="faculty" placeholder="faculty" type="text"> of  <input v-model="year" placeholder="year" type="text"> Year and I want to participate in project in
+                    <span class="badge">{{selected}}</span>
+                    <br>
+                    <br>
+                    <input v-model="facebook" placeholder="facebook id" type="text">
+                    <br>
+                    <input v-model="phone" placeholder="Mobile" type="text">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @click="open=false"  data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" v-show="name && faculty && year">Apply </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section section-text">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <!--<h3 id="pablo" class="title"> Overview :</h3>-->
+                    <p>
+                        Robotics Club , IOE Paschimanchal campus announces different robotic project for this rainy
+                        season.
+
+                        <blockquote>
+                    <p>
+                        “Tell me and I forget, teach me and I may remember, involve me and I learn. ”
+                    </p>
+                    <small>
+                        Benjamin Franklin
+                    </small>
+                    </blockquote>
+                </div>
+                <div class="col-md-8 col-md-offset-2">
+                    <h3 id="pablo" class="title"> RUNNING PROJECTS :</h3>
+                    <div style="padding:20px" v-for="(project , key) in running">
+                       <h4 style="font-size: x-large">{{key+1}}) {{project.title}} <span v-show="project.description != null ">:</span> <span v-show="project.tasks.length == 0 " @click="add(project.title)" class="btn btn-sm btn-success">apply</span> </h4>
+                        <p>{{project.description}}</p>
+                        <h4 style="font-size: medium ; font-family: initial" v-show="project.type == 1 && project.tasks.length != 0 ">Tasks</h4>
+                        <h4 style="font-size: medium ;font-family: initial" v-show="project.type == 0 && project.tasks.length != 0">Manpower</h4>
+                        <ul>
+                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')"  class="btn btn-sm btn-success">apply</span></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="col-md-8 col-md-offset-2">
+                    <h3 id="pablo1" class="title"> PURPOSED PROJECTS :</h3>
+                    <div style="padding:20px" v-for="(project , key) in start">
+                        <h4 style="font-size: x-large">{{key+1}}) {{project.title}} <span v-show="project.description != null ">:</span> <span v-show="project.tasks.length == 0 " @click="add(project.title)" class="btn btn-sm btn-success">apply</span> </h4>
+                        <p>{{project.description}}</p>
+                        <h4 style="font-size: medium ; font-family: initial" v-show="project.type == 1 && project.tasks.length != 0 ">Tasks</h4>
+                        <h4 style="font-size: medium ;font-family: initial" v-show="project.type == 0 && project.tasks.length != 0">Manpower</h4>
+                        <ul>
+                            <li style="font-size: medium;padding: 10px;font-weight: bold;" v-for="item in project.tasks">{{item}} <span @click="add(item + ' ('+ project.title + ')')"  class="btn btn-sm btn-success">apply</span></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="section section-blog-info">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-6">-->
+                            <!--<div class="blog-tags">-->
+                                <!--Tags:-->
+                                <!--<a href="#pablo" class="btn btn-google btn-round ">-->
+                                    <!--#Session-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-6">-->
+                            <!--<a href="#pablo" class="btn btn-google btn-round pull-right">-->
+                                <!--<i class="fa fa-google"></i> 232-->
+                            <!--</a>-->
+                            <!--<a href="#pablo" class="btn btn-twitter btn-round pull-right">-->
+                                <!--<i class="fa fa-twitter"></i> 910-->
+                            <!--</a>-->
+                            <!--<a href="#pablo" class="btn btn-facebook btn-round pull-right">-->
+                                <!--<i class="fa fa-facebook-square"></i> 872-->
+                            <!--</a>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <hr>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</div>
+</body>
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+<script type="text/javascript" src="//unpkg.com/uiv/dist/uiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="//unpkg.com/uiv/dist/uiv.min.js"></script>
+
+<script type="text/javascript">
+
+    var rr = new Vue({
+        el: '#app',
+
+        components: {},
+        data: function () {
+            return {
+                open: false,
+                selected : null ,
+                name : null ,
+                year : null,
+                faculty : null,
+                facebook : null ,
+                phone : null ,
+
+                projects: [
+                    {
+                        "title":"Line Follower",
+                        "description": "Line follower is an autonomous robot which follows either black line in white are or white line in black area. Robot must be able to detect particular line and keep following it.",
+                        "link":"",
+                        "type":1,
+                        "tasks":[
+                            "Further development of the existing model." ,"Programming AVR" , "Analog Circuit Improvement"
+                        ]
+
+                    },
+                    {
+                        "title":"Robotics ARM",
+                        "description": "A robotic arm is a type of mechanical arm, usually programmable, with similar functions to a human arm; the arm may be the sum total of the mechanism or may be part of a more complex robot. The links of such a manipulator are connected by joints allowing either rotational motion (such as in an articulated robot) or translational (linear) displacement",
+                        "type":1,
+                        "tasks":[
+                            "Re-designing the model for increased stability" ,"Converting existing arduino system into AVR"
+                        ]
+
+                    }
+                    ,
+                    {
+                        "title":"Automated Entry System ",
+                        "description": "The core of the system is a digitized unlocking system which employ electromagnetic lock",
+                        "type":0,
+                        "tasks":[
+                            "Designer for mechanical modeling  of the locking system" ,"AVR Programmer" ,"Intermediate Android Developer"
+                        ]
+
+                    },
+
+                    {
+                        "title":"Matrix Board Display ",
+                        "description": null,
+                        "type":0,
+                        "tasks":[
+                            "AVR Programmer"
+                        ]
+
+                    }
+                    ,
+
+
+
+                    {
+                        "title":"Water Server",
+                        "description": null,
+                        "type":0,
+                        "tasks":[
+
+                        ]
+
+                    }
+                    ,
+
+                    {
+                        "title":"OpenCV Car",
+                        "description": null,
+                        "type":0,
+                        "tasks":[
+
+                        ]
+
+                    }
+                    ,
+
+                    {
+                        "title":"Safe Quake",
+                        "description": null,
+                        "type":0,
+                        "tasks":[
+
+                        ]
+
+                    }
+                    ,
+
+                    {
+                        "title":"CNC",
+                        "description": null,
+                        "type":0,
+                        "tasks":[
+
+                        ]
+
+                    }
+                ]
+
+            }
+        },
+        computed: {
+            running: function () {
+                return this.projects.filter((project) => {
+                    if (project.type == 1) {
+                    return project
+                }
+            })
+            }
+            ,
+            start: function () {
+                return this.projects.filter((project) => {
+                    if (project.type == 0) {
+                    return project
+                }
+            })
+            }
+
+        }
+        ,
+        methods: {
+            add(value) {
+               this.selected = value;
+               this.open = true ;
+            },
+            submit() {
+
+            }
+        }
+    });
+</script>
+
+</html>
