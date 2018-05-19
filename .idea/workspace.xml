@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="873feabc-3883-4777-9663-72ce79a7558d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training/winter.html" beforeDir="false" afterPath="$PROJECT_DIR$/training/winter.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="winter.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/training/winter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2407">
-              <caret line="441" lean-forward="true" selection-start-line="441" selection-end-line="441" />
+            <state relative-caret-position="242">
+              <caret line="434" column="38" lean-forward="true" selection-start-line="434" selection-start-column="38" selection-end-line="434" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -150,12 +149,12 @@
       <workItem from="1515603985971" duration="6104000" />
       <workItem from="1526717685992" duration="8701000" />
       <workItem from="1526728565905" duration="4027000" />
-      <workItem from="1526736833382" duration="1178000" />
+      <workItem from="1526736833382" duration="1930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20010000" />
+    <option name="totallyTimeSpent" value="20762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
@@ -170,7 +169,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.328594" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.328594" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -302,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/training/winter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2407">
-          <caret line="441" lean-forward="true" selection-start-line="441" selection-end-line="441" />
+        <state relative-caret-position="242">
+          <caret line="434" column="38" lean-forward="true" selection-start-line="434" selection-start-column="38" selection-end-line="434" selection-end-column="38" />
         </state>
       </provider>
     </entry>
