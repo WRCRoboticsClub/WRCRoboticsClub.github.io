@@ -97576,8 +97576,8 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 
 
 
-// axios.defaults.baseURL = 'https://roboticsserver.herokuapp.com/api'
-__WEBPACK_IMPORTED_MODULE_3_axios___default.a.defaults.baseURL = 'http://127.0.0.1:8000/api';
+__WEBPACK_IMPORTED_MODULE_3_axios___default.a.defaults.baseURL = 'https://roboticsserver.herokuapp.com/api';
+// axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
 
 __WEBPACK_IMPORTED_MODULE_3_axios___default.a.interceptors.request.use(function () {
     var _ref = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(config) {
