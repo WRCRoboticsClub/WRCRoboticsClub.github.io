@@ -85450,7 +85450,7 @@ var Component = normalizeComponent(
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_topNav_vue__ = __webpack_require__(100);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ae86dc0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_topNav_vue__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_bc85a44a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_topNav_vue__ = __webpack_require__(369);
 var normalizeComponent = __webpack_require__(1)
 /* script */
 
@@ -85467,7 +85467,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_topNav_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ae86dc0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_topNav_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_bc85a44a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_topNav_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -85482,7 +85482,7 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-row',{directives:[{name:"show",rawName:"v-show",value:(this.$route.meta.nav=== false ? false : true),expression:"this.$route.meta.nav=== false ? false : true"}],staticStyle:{"background-color":"teal"}},[_c('el-menu',{staticClass:"el-menu-demo ",staticStyle:{"padding":"10px"},attrs:{"mode":"horizontal","active-text-color":"teal"}},[_c('el-menu-item',{attrs:{"index":"1"}},[_c('span',{staticStyle:{"font-size":"20px"}},[_c('router-link',{attrs:{"to":"/"}},[_vm._v("ROBOTICS CLUB OF  PASHCHIMANCHAL CAMPUS")])],1)]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"8"}},[_c('router-link',{attrs:{"to":"/login"}},[_vm._v("LOGIN ")])],1),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"7"}},[_vm._v(" PARTNERS ")]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"6"}},[_vm._v(" SPONSERS ")]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"5"}},[_vm._v("ACHIEVEMENTS ")]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"4"}},[_vm._v("JOIN US ")])],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-row',{directives:[{name:"show",rawName:"v-show",value:(this.$route.meta.nav=== false ? false : true),expression:"this.$route.meta.nav=== false ? false : true"}],staticStyle:{"background-color":"teal"}},[_c('el-menu',{staticClass:"el-menu-demo ",staticStyle:{"padding":"10px"},attrs:{"mode":"horizontal","active-text-color":"teal"}},[_c('el-menu-item',{attrs:{"index":"1"}},[_c('span',{staticStyle:{"font-size":"20px"}},[_c('router-link',{attrs:{"to":"/"}},[_vm._v("ROBOTICS CLUB OF  PASHCHIMANCHAL CAMPUS")])],1)]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"8"}},[_c('router-link',{attrs:{"to":"/login"}},[_vm._v("LOGIN ")])],1),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"7"}},[_vm._v(" PARTNERS ")]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"6"}},[_vm._v(" SPONSERS ")]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"5"}},[_vm._v("ACHIEVEMENTS ")]),_vm._v(" "),_c('el-menu-item',{staticStyle:{"float":"right"},attrs:{"index":"4"}},[_c('a',{attrs:{"href":"https://robotics.wrc.edu.np/volunteer/"}},[_vm._v("JOIN US ")])])],1)],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
