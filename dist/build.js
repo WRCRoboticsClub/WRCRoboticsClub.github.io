@@ -190,7 +190,7 @@
     } else {
         some = function (fun) {
             var t = Object(this);
-            var len = t.length >>> 0;
+            var len = t.length >>> 0;      /////why shifted by zero position
 
             for (var i = 0; i < len; i++) {
                 if (i in t && fun.call(this, t[i], i, t)) {
