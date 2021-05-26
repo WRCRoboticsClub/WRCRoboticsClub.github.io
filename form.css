@@ -44,15 +44,18 @@
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center; }
+    align-items: center;
+   
+}
   
   .inner {
-    width: 80%;
+    width: 70%;
     margin: auto;
     padding-top: 68px;
     padding-bottom: 48px;
-    background: url("../images/arm3.jpg") no-repeat right; 
-    background-size: 25rem;
+    background: url("https://i.pinimg.com/originals/92/97/bd/9297bda694d70eaee1f7e3b4eec89f76.gif") no-repeat right; 
+    background-size: 25rem 30rem;
+    
   }
     .inner h3 {
       text-transform: uppercase;
