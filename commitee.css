@@ -1,11 +1,11 @@
 .header{
     height:100px;
-    background-color: #0000CD;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
 }
 .header>h1{
- color:white;
+ color:black;
 
 }
 .card {
