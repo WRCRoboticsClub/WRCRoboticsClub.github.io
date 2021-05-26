@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>RegistrationForm_v2 by Colorlib</title>
+		<title>register</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- MATERIAL DESIGN ICONIC FONT -->
@@ -16,29 +16,29 @@
 
 		<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
 			<div class="inner">
-				<form action="">
+				<form action="https://roboticswrc.herokuapp.com/" method="POST">
 					<h3>Registration Form</h3>
 					<div class="form-group">
 						<div class="form-wrapper">
 							<label for="">First Name</label>
-							<input type="text" class="form-control">
+							<input type="text" name="fname" class="form-control">
 						</div>
 						<div class="form-wrapper">
 							<label for="">Last Name</label>
-							<input type="text" class="form-control">
+							<input type="text" name="lname" class="form-control">
 						</div>
 					</div>
 					<div class="form-wrapper">
 						<label for="">Phone Number</label>
-						<input type="tel" class="form-control">
+						<input type="tel" name="phone" class="form-control">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Email</label>
-						<input type="email" class="form-control">
+						<input type="email" name="email" class="form-control">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Roll No.</label>
-						<input type="text" class="form-control">
+						<input type="text" name="roll" class="form-control">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Field of Interest</label>
@@ -50,7 +50,7 @@
 					</div>
 					<div class="form-wrapper">
 						<label for="">Any past association with WRC robotics or any other robotics</label>
-						<input type="text" class="form-control">
+						<input type="text" name="past" class="form-control">
 					</div>
 					<div class="checkbox">
 						<label>
@@ -63,5 +63,5 @@
 			</div>
 		</div>
 		
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+	</body>
 </html>
