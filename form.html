@@ -14,56 +14,107 @@
 
 	<body>
 
-		<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
-			<div class="inner">
-				<h3>form is closed , please contact 9846211026 for query.</h3>
-				<!-- <form action="https://roboticswrc.herokuapp.com/" method="POST">
-					<input type="hidden" name="data" value='1'>
-					<h3>Registration Form For Robo Rookies</h3>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label for="">First Name</label>
-							<input type="text" name="fname" placeholder="first name" class="form-control" required>
-						</div>
-						<div class="form-wrapper">
-							<label for="">Last Name</label>
-							<input type="text" name="lname" placeholder="last name" class="form-control" required>
-						</div>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Phone Number</label>
-						<input type="tel" name="phone" placeholder="98xxxxxxxx" class="form-control" required>
-					</div>
-					<div class="form-wrapper">
-						<label for="">microsoft Teams Email</label>
-						<input type="email" name="email" placeholder="something@pasc.tu.edu.np" class="form-control" required>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Roll No.</label>
-						<input type="text" name="roll" placeholder="PAS0xxBxx" class="form-control" required>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Field of Interest</label>
-						<textarea id="interest" class="form-control" name="interest" rows="2" ></textarea>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Projects Completed</label>
-						<textarea id="projects" class="form-control" name="projects" rows="2" ></textarea>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Any past association with WRC robotics or any other robotics</label>
-						<input type="text" name="past" class="form-control">
-					</div>
-					<div class="agreement">
-						<label>
-							by clicking register now, I accept that i do not belong to any political party and required fee will be submitted as per rule.
-							<span class="checkmark"></span>
-						</label>
-					</div>
-					<button>Register Now</button>
-				</form> -->
-			</div>
+		<!-- <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');"> -->
+<div class="container">
+	<img src="images/Club_logo.png" alt="Robotics club of wrc" id="club-logo">
+  <form action="https://roboticswrc.herokuapp.com/" method="POST">
+	<h3>Registration Form For general member intake(2nd year only)</h3>
+	<p style="color: red;">
+		*this form is only for 2nd year mechanical and automobile students.<br>
+		submit only required field.
+	</p>
+	<input type="hidden" name="data" value='1'>
+    <div class="row">
+      <div class="col-25">
+        <strong><label for="fname">Full Name</label></strong>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="fname" placeholder="Your full name.." required>
+      </div>
+    </div>
+	<hr>
+    <div class="row">
+      <div class="col-25">
+        <strong><label for="croll">College Roll number</label></strong>
+      </div>
+      <div class="col-75">
+        <input type="text" id="croll" name="croll" placeholder="PAS076B**" required>
+      </div>
+    </div>
+	<hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="phone">Phone Number</label></strong>
 		</div>
+		<div class="col-75">
+		  <input type="text" id="phone" name="phone" placeholder="98********" required>
+		</div>
+	  </div>
+	  <hr>
+	  <div class="row">
+		<div class="col-25">
+		  <strong><label for="email">e-mail</label></strong>
+		</div>
+		<div class="col-75">
+		  <input type="text" id="email" name="email" placeholder="someone@domain.com" required>
+		</div>
+	  </div>
+	  <hr>
+	<div class="row checkbox-list">
+		<div class="radio">
+		  <strong><label for="interest">Field of interest:</label></strong>
+		</div>
+		<div class="radio">
+		  <input type="checkbox" id="checkbox-item" name="management" value="1">management</input><br>
+		  <input type="checkbox" id="checkbox-item" name="coding" value="1">coding</input><br>
+		  <input type="checkbox" id="checkbox-item" name="mechanical" value="1">mechanical</input><br>
+		  <input type="checkbox" id="checkbox-item" name="electronics" value="1">electronics</input><br>
+		  <input type="checkbox" id="checkbox-item" name="automation" value="1">automation</input><br>
+		  <input type="checkbox" id="checkbox-item" name="AI" value="1">AI</input><br>
+		  <input type="checkbox" id="checkbox-item" name="exploring" value="1">exploring new field</input><br>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="radio">
+		  <strong><label for="croll">any past experience with wrc robotics or any other robotics clubs?</label></strong>
+		</div>
+		<div class="radio">
+		  <input type="radio" id="experience" name="experience" value="yes">yes</input>
+		  <input type="radio" id="experience" name="experience" value="no">no</input>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="radio">
+		  <strong><label for="croll">active committee member in any clubs?</label></strong>
+		</div>
+		<div class="radio">
+		  <input type="radio" id="associated" name="associated" value="yes">yes</input>
+		  <input type="radio" id="associated" name="associated" value="no">no</input>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="email">write about any project you are invloved in</label></strong>
+		</div>
+		<div class="col-75">
+		  <textarea type="text" id="email" name="email" placeholder="one,two,three" required></textarea>
+		</div>
+	  </div>
+	  <hr>
+	<div class="agreement">
+		<label>
+			by clicking submit, I accept that i am not active comittee member of any political party and required actions will be performed as per rule.
+		</label>
+	</div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
 		
 	</body>
 </html>
