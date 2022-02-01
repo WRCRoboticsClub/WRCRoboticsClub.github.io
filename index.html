@@ -2,7 +2,48 @@
 <script>
 
 </script>
+
+<style>
+	body, html {
+  height: 100%
+}
+
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+@keyframes logo {
+  from {transform: scale(1,1)}
+  to {transform: scale(1.1,1.1)}
+}
+
+.middle img {
+  animation: logo 1s infinite;
+  animation-direction: alternate;
+  z-index:-1;
+}
+
+</style>
 <body>
-	this site is under development. <a href="https://site-roboticswrc.vercel.app/">click here</a> to visit our developing site.
+	<div class="main">
+  		<div class="middle">
+    			<img src="image/logo.png"></img>
+    			<h1>this site is under development. </h1>
+    			<hr>
+  			<p><a href="https://site-roboticswrc.vercel.app/">click here</a> to visit our developing site.</p>
+  		</div>
+	</div> 
+	
 </body>
 </html>
+
