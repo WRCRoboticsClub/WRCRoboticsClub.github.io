@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>register</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="./fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="form.css">
+	</head>
+
+	<body>
+
+		<!-- <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');"> -->
+<div class="container">
+	<img src="image/logo.png" alt="Robotics club of wrc" id="club-logo">
+  <form action="https://roboticswrc.herokuapp.com/rookies.php" method="POST">
+	<h3>Registration Form For volunteer intake 2079</h3>
+	<!-- <img style="max-height:300px;" src="image/2079rainysession_robotics.jpg" alt="rainy session" id="club-logo"> -->
+	<p style="color: red;">
+		*only for student of wrc.
+	</p>
+	<p>
+		<!-- <strong>date:</strong>2079-02-17<br>
+		<strong>venue:</strong>auditorium hall -->
+	</p>
+	<input type="hidden" name="data" value='1'>
+    <div class="row">
+      <div class="col-25">
+        <strong><label for="fname">Full Name</label></strong>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="fname" placeholder="Your full name.." required>
+      </div>
+    </div>
+	<hr>
+    <div class="row">
+      <div class="col-25">
+        <strong><label for="croll">College Roll number(full)</label></strong>
+      </div>
+      <div class="col-75">
+        <input type="text" id="croll" name="croll" placeholder="PAS076B**" required>
+      </div>
+    </div>
+	<hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="phone">Phone Number</label></strong>
+		</div>
+		<div class="col-75">
+		  <input type="text" id="phone" name="phone" placeholder="98********" required>
+		</div>
+	  </div>
+	  <hr>
+	  <div class="row">
+		<div class="col-25">
+		  <strong><label for="email">e-mail</label></strong>
+		</div>
+		<div class="col-75">
+		  <input type="email" id="email" name="email" placeholder="someone@domain.com" required>
+		</div>
+	  </div>
+	  <hr>
+	<div class="row checkbox-list">
+		<div class="radio">
+		  <strong><label for="interest">Field of interest:</label></strong>
+		</div>
+		<div class="radio">
+		  <!-- <input type="checkbox" id="checkbox-item" name="management" value="1">management</input><br> -->
+		  <input type="checkbox" id="checkbox-item" name="coding" value="1">coding</input><br>
+		  <input type="checkbox" id="checkbox-item" name="mechanical" value="1">mechanical</input><br>
+		  <input type="checkbox" id="checkbox-item" name="electronics" value="1">electronics</input><br>
+		  <input type="checkbox" id="checkbox-item" name="automation" value="1">automation</input><br>
+		  <input type="checkbox" id="checkbox-item" name="ai" value="1">AI</input><br>
+		  <input type="checkbox" id="checkbox-item" name="iot" value="1">IOT</input><br>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="radio">
+		  <strong><label for="croll">any past experience with robotics ?</label></strong>
+		</div>
+		<div class="radio">
+		  <input type="radio" id="experience" name="experience" value="yes">yes</input>
+		  <input type="radio" id="experience" name="experience" value="no">no</input>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="radio">
+		  <strong><label for="croll">associated in any other clubs than robotics?</label></strong>
+		</div>
+		<div class="radio">
+		  <input type="radio" id="associated" name="associated" value="yes">yes</input>
+		  <input type="radio" id="associated" name="associated" value="no">no</input>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="past">write about any project you are invloved in(if any)</label></strong>
+		</div>
+		<div class="col-75">
+		  <textarea type="text" id="past" name="past" placeholder="one,two,three" required></textarea>
+		</div>
+	  </div>
+	  <hr>
+	<div class="agreement">
+		<label>
+			by clicking submit, I am swearing to god i will respect each descisions and policies of robotics club of wrc and below mentioned fee will be paid.<br>
+            Registration fee: rs 300<br>
+            *pay via esewa <br>
+            esewa id: 9819395509
+		</label>
+	</div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+		
+	</body>
+</html>
