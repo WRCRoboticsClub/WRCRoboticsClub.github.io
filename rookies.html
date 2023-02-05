@@ -24,7 +24,7 @@
 		*only for student of wrc.
 	</p>
 	<p>
-		<strong>Deadline:</strong>21 june<br>
+		<strong>Deadline:</strong>7 February<br>
 	</p>
 	<input type="hidden" name="data" value='1'>
     <div class="row">
@@ -38,13 +38,22 @@
 	<hr>
     <div class="row">
       <div class="col-25">
-        <strong><label for="croll">College Roll number</label></strong>
+        <strong><label for="croll">Faculty</label></strong>
       </div>
       <div class="col-75">
-        <input type="text" id="croll" name="croll" placeholder="PAS076B**" required>
+        <input type="text" id="faculty" name="faculty" placeholder="Mechanical" required>
       </div>
     </div>
 	<hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="croll">College Roll number</label></strong>
+		</div>
+		<div class="col-75">
+		  <input type="text" id="croll" name="croll" placeholder="PAS076B**" required>
+		</div>
+	  </div>
+	  <hr>
 	<div class="row">
 		<div class="col-25">
 		  <strong><label for="phone">Phone Number</label></strong>
@@ -108,13 +117,24 @@
 	  </div>
 	  <hr>
 	<div class="agreement">
-		<label>
-			pay via esewa by scanning qr-code below or phone number 9803299782 (Amit Patel) and compulsory write your name in remarks<br>
-			By clicking submit, I agree i will respect each descisions and policies of robotics club of wrc.
-		</label>
-		<img src="image/qr.jpg" alt="QR" id="club-logo" width="200px" height="300px">
+		<div class="col-25">
+
+			<label>
+				Pay Rs.300 Via QR Below with Your Name in Remarks and Provide Screenshot Here.<br>
+				<hr>
+				<input type="file" id="myFile" name="filename">	
+				<p style="color: red;">
+					*only in jpg, png format.
+				</p>
+			</label>
+		</div>
+		<div class="col-75">
+
+			<img src="image/qr.jpg" alt="QR" id="club-logo" width="200px" height="300px">
+		</div>
 	</div>
     <div class="row">
+		<label>By clicking submit, I agree i will respect each decisions and policies of robotics club of wrc.</label>
       <input type="submit" value="Submit">
     </div>
   </form>
