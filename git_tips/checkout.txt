@@ -1,0 +1,2 @@
+1, git checkout main : to switch to main branch and if you have branch name ram then enter "git checkout ram" , so you can work in multiple branch in same computer . code in one branch may not be same as other , so if you push form branch ram (git push origin ram) then only ram branch will be updated and main and other will be behind ram branch. 
+2, git pull origin ram : if you are in main branch and you execute this command ram branch code will be merged to main , so main will be same as ram branch . note: you can use --allow-unrelated-history with this command.
