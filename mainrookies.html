@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>register</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="./fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="form.css">
+	</head>
+
+	<body>
+
+		<!-- <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');"> -->
+<div class="container">
+	<img src="image/logo.png" alt="Robotics club of wrc" id="club-logo">
+  <form action="https://roboticswrc.herokuapp.com/" method="POST">
+	<h3>Registration Form For volunteer intake 2079</h3>
+	<img style="max-height:300px;" src="image/rookies2079.png" alt="robo rookies 2079" id="club-logo">
+	<p style="color: red;">
+		*only for student of wrc.
+	</p>
+	<p>
+		<strong>Deadline:</strong>7 February<br>
+	</p>
+	<input type="hidden" name="data" value='1'>
+    <div class="row">
+      <div class="col-25">
+        <strong><label for="fname">Full Name</label></strong>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="fname" placeholder="Your full name.." required>
+      </div>
+    </div>
+	<hr>
+    <div class="row">
+      <div class="col-25">
+        <strong><label for="croll">Faculty</label></strong>
+      </div>
+      <div class="col-75">
+        <input type="text" id="faculty" name="faculty" placeholder="Mechanical" required>
+      </div>
+    </div>
+	<hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="croll">College Roll number</label></strong>
+		</div>
+		<div class="col-75">
+		  <input type="text" id="croll" name="croll" placeholder="PAS076B**" required>
+		</div>
+	  </div>
+	  <hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="phone">Phone Number</label></strong>
+		</div>
+		<div class="col-75">
+		  <input type="text" id="phone" name="phone" placeholder="98********" required>
+		</div>
+	  </div>
+	  <hr>
+	  <div class="row">
+		<div class="col-25">
+		  <strong><label for="email">e-mail</label></strong>
+		</div>
+		<div class="col-75">
+		  <input type="email" id="email" name="email" placeholder="someone@domain.com" required>
+		</div>
+	  </div>
+	  <hr>
+	<div class="row checkbox-list">
+		<div class="radio">
+		  <strong><label for="interest">Field of interest:</label></strong>
+		</div>
+		<div class="radio">
+		  <!-- <input type="checkbox" id="checkbox-item" name="management" value="1">management</input><br> -->
+		  <input type="radio" id="radio-item" name="field" value="coding">Coding</input><br>
+		  <input type="radio" id="radio-item" name="field" value="mechanical">Mechanical Design</input><br>
+		  <input type="radio" id="radio-item" name="field" value="Circuitary">Circuitary</input><br>
+		  <!-- <input type="checkbox" id="checkbox-item" name="automation" value="1">automation</input><br>
+		  <input type="checkbox" id="checkbox-item" name="ai" value="1">AI</input><br>
+		  <input type="checkbox" id="checkbox-item" name="iot" value="1">IOT</input><br> -->
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="radio">
+		  <strong><label for="croll">any past experience with robotics ?</label></strong>
+		</div>
+		<div class="radio">
+		  <input type="radio" id="experience" name="experience" value="yes">yes</input>
+		  <input type="radio" id="experience" name="experience" value="no">no</input>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="row">
+		<div class="col-25">
+			<strong><label for="career">Why do you want to pursue career in robotics?</label></strong>
+		  </div>
+		  <div class="col-75">
+			<textarea type="text" id="career" name="career" placeholder="i want a career in robotics because ..." required></textarea>
+		  </div>
+	</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-25">
+		  <strong><label for="past">write about any project you are invloved in(if any)</label></strong>
+		</div>
+		<div class="col-75">
+		  <textarea type="text" id="past" name="past" placeholder="one,two,three" required></textarea>
+		</div>
+	  </div>
+	  <hr>
+	<div class="agreement">
+		<div class="col-25">
+
+			<label>
+				Pay Rs.300 Via QR Below with Your Name in Remarks and Provide Screenshot Here.<br>
+				<hr>
+				<input type="file" id="myFile" name="filename">	
+				<p style="color: red;">
+					*only in jpg, png format.
+				</p>
+			</label>
+		</div>
+		<div class="col-75">
+
+			<img src="image/qr.jpg" alt="QR" id="club-logo" width="200px" height="300px">
+		</div>
+	</div>
+    <div class="row">
+		<label>By clicking submit, I agree i will respect each decisions and policies of robotics club of wrc.</label>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+		
+	</body>
+</html>
