@@ -1,6 +1,7 @@
 import { Box, Heading, Text, Image, Button } from "theme-ui";
 import ShapePattern1 from "../assets/shape-pattern1.png";
 import ShapePattern2 from "../assets/shape-pattern2.png";
+import Link from "next/link";
 
 function SingleAchievement({ infos }) {
   return (
@@ -13,11 +14,11 @@ function SingleAchievement({ infos }) {
               <Box>
                 <Heading sx={styles.heading}>{infos.title}</Heading>
                 <p style={{ fontSize: "20px", lineHeight: "1.5" }}>
-                  Loren ipsun dolor sit anet, consectetur adipisci elit, sed
-                  eiusnod tenpor incidunt ut labore et dolore nagna aliqua. Ut
-                  enin ad ninin venian.
+                  {infos.description}
                 </p>
-                <Button>Show Details</Button>
+                <Link href={infos.link} target="_blank" passHref>
+                  <Button>Show Details</Button>
+                </Link>
               </Box>
               {/* Right Portion */}
               <Box
@@ -98,6 +99,7 @@ const styles = {
   heading: {
     fontSize: "40px",
     fontWeight: "bold",
+    textAlign: "left",
   },
   para: {
     fontSize: "20px",
