@@ -9,42 +9,124 @@ export default function Committee({ committeeData }) {
   // committeeData.sort((a, b) => {
   //   return a.position - b.position;
   // });
+  const executiveHead = committeeData?.["Executive Head"] || "";
+  const viceExecutiveHead = committeeData?.["Vice-Executive Head"] || "";
+  const executiveMember = committeeData?.["Executive Member"] || ""; //mapping required
+  const treasurer = committeeData?.["Executive Memberand Treasurer"] || "";
 
-  //console.log("api", committeeData);
+  const advisor = committeeData?.["Advisor"] || ""; //mapping required
+  const seniorMember = committeeData?.["Senior Member"] || ""; //mapping required
+  const designTransformer = committeeData?.["Design Transformer"] || "";
+  const logisticShaft = committeeData?.["Logistics Shaft"] || "";
+  const mediaRectifier = committeeData?.["Media Rectifier"] || "";
+  const projectCombuster = committeeData?.["Project Combuster"] || "";
+  const publicRelationProcessor =
+    committeeData?.["Public Relation Processor"] || "";
+
+  const generalMember = committeeData?.["General Member"] || ""; //mapping required
+
+  const toplevel = [...executiveHead, ...viceExecutiveHead];
+  const secondlevel = [...executiveMember, ...treasurer];
+  const thirdlevel = [...advisor, ...seniorMember];
+  const fourthlevel = [
+    ...designTransformer,
+    ...logisticShaft,
+    ...mediaRectifier,
+    ...projectCombuster,
+    ...publicRelationProcessor,
+  ];
+
+  // console.log("api", secondlevel);
   return (
     <section sx={styles.banner} id="committee">
-      <SectionHeader slogan="Page Under Construction" />
-      {/* <Container sx={styles.banner.container}>
-        <SectionHeader slogan="Meet Our Enthusiastic 17th Executive Committee" />
-        <Grid sx={styles.grid}>
-          {committeeData.map((item) => (
-            <TeamCard
-              key={item.id}
-              src={item.picture}
-              title={item.name}
-              altText={item.name}
-              email={item.email}
-              designation={item.position}
-              fb={item.fb}
-              insta={item.insta}
-              tweet={item.tweet}
-              linkedin={item.lnkdin}
-            />
-          ))}
-        </Grid>
-      </Container> */}
+      {committeeData ? (
+        <Container sx={styles.banner.container}>
+          <SectionHeader slogan="Meet Our Enthusiastic 17th Executive Committee" />
+          <Grid sx={styles.grid}>
+            {toplevel.map((level, idx) => (
+              <TeamCard
+                key={idx}
+                src={level.image[0]}
+                title={level.name[0]}
+                altText={level.name[0]}
+                designation={level.position[0]}
+                fb={level.fb[0]}
+                insta={level.insta[0]}
+                tweet={level.twitter[0]}
+                linkedin={level.linkedin[0]}
+              />
+            ))}
+            {secondlevel.map((level, idx) => (
+              <TeamCard
+                key={idx}
+                src={level.image[0]}
+                title={level.name[0]}
+                altText={level.name[0]}
+                designation={level.position[0]}
+                fb={level.fb[0]}
+                insta={level.insta[0]}
+                tweet={level.twitter[0]}
+                linkedin={level.linkedin[0]}
+              />
+            ))}
+            {thirdlevel.map((level, idx) => (
+              <TeamCard
+                key={idx}
+                src={level.image[0]}
+                title={level.name[0]}
+                altText={level.name[0]}
+                designation={level.position[0]}
+                fb={level.fb[0]}
+                insta={level.insta[0]}
+                tweet={level.twitter[0]}
+                linkedin={level.linkedin[0]}
+              />
+            ))}
+            {fourthlevel.map((level, idx) => (
+              <TeamCard
+                key={idx}
+                src={level.image[0]}
+                title={level.name[0]}
+                altText={level.name[0]}
+                designation={level.position[0]}
+                fb={level.fb[0]}
+                insta={level.insta[0]}
+                tweet={level.twitter[0]}
+                linkedin={level.linkedin[0]}
+              />
+            ))}
+            {generalMember.map((level, idx) => (
+              <TeamCard
+                key={idx}
+                src={level.image[0]}
+                title={level.name[0]}
+                altText={level.name[0]}
+                designation={level.position[0]}
+                fb={level.fb[0]}
+                insta={level.insta[0]}
+                tweet={level.twitter[0]}
+                linkedin={level.linkedin[0]}
+              />
+            ))}
+          </Grid>
+        </Container>
+      ) : (
+        <SectionHeader slogan="Page Under Construction" />
+      )}
     </section>
   );
 }
 
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`https://backend-robotics.herokuapp.com/comittee`);
-//   const committeeData = await res.json();
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(
+    `https://robotics0test.pythonanywhere.com/committee/17`
+  );
+  const committeeData = await res.json();
 
-//   // Pass data to the page via props
-//   return { props: { committeeData } };
-// }
+  // Pass data to the page via props
+  return { props: { committeeData } };
+}
 
 const styles = {
   banner: {
