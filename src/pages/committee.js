@@ -117,7 +117,7 @@ export default function Committee({ committeeData }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Fetch data from external API
   const res = await fetch(
     `https://robotics0test.pythonanywhere.com/committee/17`
