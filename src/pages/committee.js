@@ -4,7 +4,7 @@ import { Container, Grid } from "theme-ui";
 import SectionHeader from "../components/section-header";
 import TeamCard from "../components/team-card";
 // import { data } from "../data/committee.data";
-
+// New update with images
 export default function Committee({ committeeData }) {
   // committeeData.sort((a, b) => {
   //   return a.position - b.position;
@@ -36,7 +36,6 @@ export default function Committee({ committeeData }) {
     ...publicRelationProcessor,
   ];
 
-  // console.log("api", secondlevel);
   return (
     <section sx={styles.banner} id="committee">
       {committeeData ? (
