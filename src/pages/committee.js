@@ -1,5 +1,6 @@
 /** @jsxImportSource @theme-ui/core */
 import { jsx } from "theme-ui";
+import { useState, useEffect } from "react";
 import { Container, Grid } from "theme-ui";
 import SectionHeader from "../components/section-header";
 import TeamCard from "../components/team-card";
@@ -35,6 +36,7 @@ export default function Committee({ committeeData }) {
     ...projectCombuster,
     ...publicRelationProcessor,
   ];
+  console.log("api", toplevel);
 
   return (
     <section sx={styles.banner} id="committee">
