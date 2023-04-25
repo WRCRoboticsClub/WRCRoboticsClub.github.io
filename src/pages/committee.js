@@ -36,7 +36,6 @@ export default function Committee({ committeeData }) {
     ...projectCombuster,
     ...publicRelationProcessor,
   ];
-  console.log("api", toplevel);
 
   return (
     <section sx={styles.banner} id="committee">

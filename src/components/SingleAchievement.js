@@ -12,11 +12,11 @@ function SingleAchievement({ infos }) {
             <Box sx={styles.gridContainer}>
               {/* Left Portion */}
               <Box>
-                <Heading sx={styles.heading}>{infos.title}</Heading>
+                <Heading sx={styles.heading}>{infos.title[0]}</Heading>
                 <p style={{ fontSize: "20px", lineHeight: "1.5" }}>
-                  {infos.description}
+                  {infos.desc[0]}
                 </p>
-                <Link href={infos.link} target="_blank" passHref>
+                <Link href={infos.fb[0]} target="_blank" passHref>
                   <Button>Show Details</Button>
                 </Link>
               </Box>
@@ -25,7 +25,7 @@ function SingleAchievement({ infos }) {
                 sx={styles.imageBoxContainer}
                 style={infos.id % 2 ? { order: 1 } : { order: -1 }}
               >
-                <Image src={infos.banner.src} />
+                <Image src={infos.imageUrl[0]} />
                 {/* <Image
                   sx={styles.imageBoxContainer.svgImageLeft}
                   src={ShapeLeft.src}
