@@ -7,7 +7,7 @@ export default function Achievements({ achievementData }) {
     <section id="achievement">
       {achievementData.achievements.map((sData, index) => {
         //always use keys for react while mapping
-        return <SingleAchievement key={index} infos={sData} />;
+        return <SingleAchievement key={index} infos={sData} id={index} />;
       })}
     </section>
   );

@@ -3,7 +3,7 @@ import ShapePattern1 from "../assets/shape-pattern1.png";
 import ShapePattern2 from "../assets/shape-pattern2.png";
 import Link from "next/link";
 
-function SingleAchievement({ infos }) {
+function SingleAchievement({ infos, id }) {
   return (
     <>
       <Box sx={styles.banner}>
@@ -23,9 +23,9 @@ function SingleAchievement({ infos }) {
               {/* Right Portion */}
               <Box
                 sx={styles.imageBoxContainer}
-                style={infos.id % 2 ? { order: 1 } : { order: -1 }}
+                style={id % 2 ? { order: 1 } : { order: -1 }}
               >
-                <Image src={infos.imageUrl[0]} />
+                <Image src={infos.imageUrl[0]} style={{ width: "100%" }} />
                 {/* <Image
                   sx={styles.imageBoxContainer.svgImageLeft}
                   src={ShapeLeft.src}
@@ -34,7 +34,7 @@ function SingleAchievement({ infos }) {
                   sx={styles.imageBoxContainer.svgImageRight}
                   src={ShapeRight.src}
                 /> */}
-                {infos.id % 2 ? (
+                {id % 2 ? (
                   <Box sx={styles.shapeBoxRight}>
                     <Image src={ShapePattern2.src} alt="shape" />
                   </Box>
