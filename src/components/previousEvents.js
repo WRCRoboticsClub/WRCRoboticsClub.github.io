@@ -56,14 +56,6 @@ const styles = {
     boxShadow: "0px 0px 1px rgba(38, 78, 118, 0.35)",
     transition: "all 0.3s",
     borderRadius: "6px",
-    // p: [
-    //   "30px 20px 35px",
-    //   "30px 25px 35px",
-    //   "30px 20px 35px",
-    //   "35px 30px 40px 40px",
-    //   "30px 30px 35px",
-    //   "35px 30px 40px 40px",
-    // ],
     bg: "white",
     textAlign: "left",
     m: [

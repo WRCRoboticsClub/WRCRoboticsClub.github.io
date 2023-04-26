@@ -16,7 +16,7 @@ export default [
     label: "Committee",
   },
   {
-    path:'/feedbackForm',
-    label:"Feedback Form"
-  }
+    path: "/annual-event-form",
+    label: "Annual Event form",
+  },
 ];

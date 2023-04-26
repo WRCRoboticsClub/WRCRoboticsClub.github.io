@@ -2,12 +2,12 @@ import SingleAchievement from "../components/SingleAchievement";
 import { achievements } from "../data/achievements.data";
 
 export default function Achievements({ achievementData }) {
-  console.log(achievementData.achievements);
+  //console.log(achievementData.achievements);
   return (
     <section id="achievement">
       {achievementData.achievements.map((sData, index) => {
         //always use keys for react while mapping
-        return <SingleAchievement key={index} infos={sData} />;
+        return <SingleAchievement key={index} infos={sData} id={index}/>;
       })}
     </section>
   );
