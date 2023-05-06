@@ -14,7 +14,9 @@ export default function Achievements({ achievementData }) {
 
 export async function getStaticProps() {
   // Fetch data from external API
-  const res = await fetch(`${process.env.BASE_URL}/achievements`);
+  const res = await fetch(
+    "https://wrcrobotics.pythonanywhere.com/achievements"
+  );
 
   const achievementData = await res.json();
 
