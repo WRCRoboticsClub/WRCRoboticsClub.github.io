@@ -119,7 +119,7 @@ export default function Committee({ committeeData }) {
 
 export async function getStaticProps() {
   // Fetch data from external API
-  const res = await fetch(`${process.env.base_url}/committee`);
+  const res = await fetch(`${process.env.BASE_URL}/committee`);
 
   const committeeData = await res.json();
 
