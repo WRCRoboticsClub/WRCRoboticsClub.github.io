@@ -10,21 +10,21 @@ export default function Committee({ committeeData }) {
   // committeeData.sort((a, b) => {
   //   return a.position - b.position;
   // });
-  const executiveHead = committeeData?.["Executive Head"] || "";
-  const viceExecutiveHead = committeeData?.["Vice-Executive Head"] || "";
-  const executiveMember = committeeData?.["Executive Member"] || ""; //mapping required
-  const treasurer = committeeData?.["Executive Memberand Treasurer"] || "";
+  const executiveHead = committeeData.data?.["Executive Head"] || "";
+  const viceExecutiveHead = committeeData.data?.["Vice-Executive Head"] || "";
+  const executiveMember = committeeData.data?.["Executive Member"] || ""; //mapping required
+  const treasurer = committeeData.data?.["Executive Memberand Treasurer"] || "";
 
-  const advisor = committeeData?.["Advisor"] || ""; //mapping required
-  const seniorMember = committeeData?.["Senior Member"] || ""; //mapping required
-  const designTransformer = committeeData?.["Design Transformer"] || "";
-  const logisticShaft = committeeData?.["Logistics Shaft"] || "";
-  const mediaRectifier = committeeData?.["Media Rectifier"] || "";
-  const projectCombuster = committeeData?.["Project Combuster"] || "";
+  const advisor = committeeData.data?.["Advisor"] || ""; //mapping required
+  const seniorMember = committeeData.data?.["Senior Member"] || ""; //mapping required
+  const designTransformer = committeeData.data?.["Design Transformer"] || "";
+  const logisticShaft = committeeData.data?.["Logistics Shaft"] || "";
+  const mediaRectifier = committeeData.data?.["Media Rectifier"] || "";
+  const projectCombuster = committeeData.data?.["Project Combuster"] || "";
   const publicRelationProcessor =
-    committeeData?.["Public Relation Processor"] || "";
+    committeeData.data?.["Public Relation Processor"] || "";
 
-  const generalMember = committeeData?.["General Member"] || ""; //mapping required
+  const generalMember = committeeData.data?.["General Member"] || ""; //mapping required
 
   const toplevel = [...executiveHead, ...viceExecutiveHead];
   const secondlevel = [...executiveMember, ...treasurer];
@@ -52,8 +52,8 @@ export default function Committee({ committeeData }) {
                 designation={level.position[0]}
                 fb={level.fb[0]}
                 insta={level.insta[0]}
-                tweet={level.twitter[0]}
-                linkedin={level.linkedin[0]}
+                tweet={level?.twitter[0]}
+                linkedin={level?.linkedin[0]}
               />
             ))}
             {secondlevel.map((level, idx) => (
@@ -119,9 +119,8 @@ export default function Committee({ committeeData }) {
 
 export async function getStaticProps() {
   // Fetch data from external API
-  const res = await fetch(
-    `https://robotics0test.pythonanywhere.com/committee/17`
-  );
+  const res = await fetch(`${process.env.base_url}/committee`);
+
   const committeeData = await res.json();
 
   // Pass data to the page via props

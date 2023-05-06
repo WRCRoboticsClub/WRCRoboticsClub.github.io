@@ -25,7 +25,7 @@ function SingleAchievement({ infos, id }) {
                 sx={styles.imageBoxContainer}
                 style={id % 2 ? { order: 1 } : { order: -1 }}
               >
-                <Image src={infos.imageUrl[0]} style={{ width: "100%" }} />
+                <Image src={infos.image[0]} style={{ width: "100%" }} />
                 {/* <Image
                   sx={styles.imageBoxContainer.svgImageLeft}
                   src={ShapeLeft.src}

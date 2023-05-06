@@ -18,8 +18,7 @@ export default function TeamCard({
   tweet,
   linkedin,
 }) {
-  // const imageId = src.split("/")[5].split("=")[2];
-  // console.log("imageId", title, src);
+  
 
   return (
     <Box sx={styles.card}>
