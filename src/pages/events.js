@@ -3,7 +3,7 @@ import PreviousEvents from "../components/previousEvents";
 import BannerImg from "../assets/events/b_f_s_2079.jpg";
 import { useRouter } from "next/router";
 
-export default function Events() {
+export default function Events({eventData}) {
   const router = useRouter();
   return (
     <Box>
@@ -38,11 +38,20 @@ export default function Events() {
         </Box>
       </Box>
       <Box>
-        <PreviousEvents />
+        <PreviousEvents previousEvents={eventData}/>
       </Box>
-      //{" "}
     </Box>
   );
+}
+
+export async function getStaticProps() {
+  // Fetch data from external API
+  const res = await fetch("https://wrcrobotics.pythonanywhere.com/events");
+
+  const eventData = await res.json();
+
+  // Pass data to the page via props
+  return { props: { eventData } };
 }
 
 const styles = {
