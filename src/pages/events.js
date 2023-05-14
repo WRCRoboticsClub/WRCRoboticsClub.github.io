@@ -4,6 +4,7 @@ import BannerImg from "../assets/events/b_f_s_2079.jpg";
 import { useRouter } from "next/router";
 
 export default function Events({eventData}) {
+  console.log('event', eventData);
   const router = useRouter();
   return (
     <Box>
