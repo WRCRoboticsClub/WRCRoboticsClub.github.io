@@ -2,39 +2,54 @@ import { Container, Box, Heading, Text, Image, Button } from "theme-ui";
 import PreviousEvents from "../components/previousEvents";
 import BannerImg from "../assets/events/b_f_s_2079.jpg";
 import { useRouter } from "next/router";
+import { HighlightTwoTone } from "@mui/icons-material";
 
 export default function Events({eventData}) {
-  console.log('event', eventData);
+  // in the event data, if there comes 1 from backend that is the highlighted data, so present it in container
+  const highlightData = eventData.data.find(e=>e.status[0] == '1')
+  
   const router = useRouter();
   return (
     <Box>
       <Box sx={styles.banner} id="events">
         <Box sx={styles.backdrop}>
           <Box sx={styles.banner.container}>
-            <Box sx={styles.banner.imageBox}>
-              <Image src={BannerImg.src} alt="banner" />
-            </Box>
-            <Box sx={styles.banner.contentBox}>
-              <Heading variant="heroPrimary" sx={styles.title}>
-                Battle for speed 2022 and Project Demonstration
-              </Heading>
-              <Box sx={styles.banner.descriptions}>
-                <Text variant="title">Date : shrawan 7,2079</Text>
-                <Text variant="subTitle">Type : physical,competition,open</Text>
-                <Text variant="subTitle">
-                  This is a open competition and exhibition by Robotics Club,
-                  Paschimanchal Campus.
-                </Text>
-              </Box>
+            {
+              !highlightData ? (
+                 <Box sx={styles.banner.contentBox}>
+                  <Heading variant="heroPrimary" sx={styles.title}>
+                     No any active events
+                    </Heading>
+                 </Box>
+              ) :(
+                <Box sx={styles.banner.container}>
+                  <Box sx={styles.banner.imageBox}>
+                    <Image src={highlightData.image[0]} alt="banner" />
+                  </Box>
+                  <Box sx={styles.banner.contentBox}>
+                    <Heading variant="heroPrimary" sx={styles.title}>
+                      {highlightData.title[0]}
+                    </Heading>
+                    <Box sx={styles.banner.descriptions}>
+                      <Text variant="title">Date : {highlightData.date[0]}</Text>
+                      <Text variant="subTitle">Type : {highlightData.type[0]}</Text>
+                      <Text variant="subTitle">
+                        {highlightData.desc[0]}
+                      </Text>
+                    </Box>
 
-              <Button
-                sx={styles.banner.button}
-                variant="primary"
-                onClick={() => router.push("/registerForm")}
-              >
-                Join In
-              </Button>
-            </Box>
+                    <Button
+                      sx={styles.banner.button}
+                      variant="primary"
+                      onClick={() => router.push(highlightData?.formlink[0] || "")}
+                    >
+                      Join In
+                    </Button>
+                </Box> 
+              </Box>
+              )
+            }
+            
           </Box>
         </Box>
       </Box>
