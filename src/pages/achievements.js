@@ -1,12 +1,23 @@
 import SingleAchievement from "../components/SingleAchievement";
-import { achievements } from "../data/achievements.data";
-
+import { useState, useEffect } from "react";
 export default function Achievements({ achievementData }) {
+  const [data, setData] = useState(null);
+  //const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    //setLoading(true);
+    fetch("https://wrcrobotics.pythonanywhere.com/achievements")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        //setLoading(false);
+      });
+  }, []);
   return (
     <section id="achievement">
-      {achievementData.data.map((sData, index) => {
+      {achievementData.data.map((data, index) => {
         //always use keys for react while mapping
-        return <SingleAchievement key={index} infos={sData} id={index} />;
+        return <SingleAchievement key={index} infos={data} id={index} />;
       })}
     </section>
   );

@@ -33,10 +33,11 @@ export default function Committee({ committeeData }) {
     ...projectCombuster,
     ...publicRelationProcessor,
   ];
+  const fifthlevel = [...generalMember];
 
   return (
     <section sx={styles.banner} id="committee">
-      {committeeData ? (
+      {!notfound ? (
         <Container sx={styles.banner.container}>
           <SectionHeader slogan="Meet Our Enthusiastic 18th Executive Committee" />
           <Grid sx={styles.grid}>
@@ -92,40 +93,44 @@ export default function Committee({ committeeData }) {
                 linkedin={level.linkedin[0]}
               />
             ))}
-            {!generalMember ? (
+            {/* {!generalMember ? (
               <SectionHeader slogan="No members to show" />
-            ) : (
-              generalMember.map((level, idx) => (
-                <TeamCard
-                  key={idx}
-                  src={level.image[0]}
-                  title={level.name[0]}
-                  altText={level.name[0]}
-                  designation={level.position[0]}
-                  fb={level.fb[0]}
-                  insta={level.insta[0]}
-                  tweet={level.twitter[0]}
-                  linkedin={level.linkedin[0]}
-                />
-              ))
-            )}
+            ) : ( */}
+            {fifthlevel.map((level, idx) => (
+              <TeamCard
+                key={idx}
+                src={level.image[0]}
+                title={level.name[0]}
+                altText={level.name[0]}
+                designation={level.position[0]}
+                fb={level.fb[0]}
+                insta={level.insta[0]}
+                tweet={level.twitter[0]}
+                linkedin={level.linkedin[0]}
+              />
+            ))}
           </Grid>
         </Container>
       ) : (
-        <SectionHeader slogan="Page Under Construction" />
+        <SectionHeader slogan="New Committee is coming soon" />
       )}
     </section>
   );
 }
 
 export async function getStaticProps() {
-  // Fetch data from external API
-  const res = await fetch("https://wrcrobotics.pythonanywhere.com/committee");
-
-  const committeeData = await res.json();
-
-  // Pass data to the page via props
-  return { props: { committeeData } };
+  try {
+    const { data, errors } = await fetch(
+      "https://wrcrobotics.pythonanywhere.com/committee"
+    );
+    const committeeData = await res.json();
+    if (errors || !data) {
+      return { notFound: true };
+    }
+    return { props: { committeeData } };
+  } catch {
+    return { notFound: true };
+  }
 }
 
 const styles = {
