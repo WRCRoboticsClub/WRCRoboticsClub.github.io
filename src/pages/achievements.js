@@ -3,10 +3,13 @@ import { useState, useEffect } from "react";
 export default function Achievements({ achievementData }) {
   const [data, setData] = useState(null);
   //const [isLoading, setLoading] = useState(false);
+  const timestamp = new Date().getTime();
 
   useEffect(() => {
     //setLoading(true);
-    fetch("https://wrcrobotics.pythonanywhere.com/achievements")
+    fetch(
+      `https://wrcrobotics.pythonanywhere.com/achievements?timestamp=${timestamp}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data);
