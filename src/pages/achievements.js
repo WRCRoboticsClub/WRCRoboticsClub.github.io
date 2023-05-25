@@ -12,6 +12,19 @@ export default function Achievements({ achievementData }) {
   );
 }
 
+// export async function getStaticPaths() {
+//   const articles = await fetch(
+//     "https://wrcrobotics.pythonanywhere.com/achievements"
+//   );
+//   console.log("articles", articles);
+//   // generate a list of paths with route params
+//   //const paths = articles.map(article => ({ params: { articleId: article.id }}))
+
+//   return {
+//     fallback: false,
+//   };
+// }
+
 export async function getStaticProps() {
   // Fetch data from external API
   const res = await fetch(
