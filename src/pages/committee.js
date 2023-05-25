@@ -7,9 +7,6 @@ import TeamCard from "../components/team-card";
 // import { data } from "../data/committee.data";
 // New update with images
 export default function Committee({ committeeData }) {
-  // committeeData.sort((a, b) => {
-  //   return a.position - b.position;
-  // });
   const executiveHead = committeeData.data?.["Executive Head"] || "";
   const viceExecutiveHead = committeeData.data?.["Vice-Executive Head"] || "";
   const executiveMember = committeeData.data?.["Executive Member"] || ""; //mapping required
@@ -41,7 +38,7 @@ export default function Committee({ committeeData }) {
     <section sx={styles.banner} id="committee">
       {committeeData ? (
         <Container sx={styles.banner.container}>
-          <SectionHeader slogan="Meet Our Enthusiastic 17th Executive Committee" />
+          <SectionHeader slogan="Meet Our Enthusiastic 18th Executive Committee" />
           <Grid sx={styles.grid}>
             {toplevel.map((level, idx) => (
               <TeamCard
@@ -95,19 +92,23 @@ export default function Committee({ committeeData }) {
                 linkedin={level.linkedin[0]}
               />
             ))}
-            {generalMember.map((level, idx) => (
-              <TeamCard
-                key={idx}
-                src={level.image[0]}
-                title={level.name[0]}
-                altText={level.name[0]}
-                designation={level.position[0]}
-                fb={level.fb[0]}
-                insta={level.insta[0]}
-                tweet={level.twitter[0]}
-                linkedin={level.linkedin[0]}
-              />
-            ))}
+            {!generalMember ? (
+              <SectionHeader slogan="No members to show" />
+            ) : (
+              generalMember.map((level, idx) => (
+                <TeamCard
+                  key={idx}
+                  src={level.image[0]}
+                  title={level.name[0]}
+                  altText={level.name[0]}
+                  designation={level.position[0]}
+                  fb={level.fb[0]}
+                  insta={level.insta[0]}
+                  tweet={level.twitter[0]}
+                  linkedin={level.linkedin[0]}
+                />
+              ))
+            )}
           </Grid>
         </Container>
       ) : (

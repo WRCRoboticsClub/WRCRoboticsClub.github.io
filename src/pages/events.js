@@ -1,8 +1,7 @@
 import { Container, Box, Heading, Text, Image, Button } from "theme-ui";
 import PreviousEvents from "../components/previousEvents";
-import BannerImg from "../assets/events/b_f_s_2079.jpg";
+//import BannerImg from "../assets/events/b_f_s_2079.jpg";
 import { useRouter } from "next/router";
-import { HighlightTwoTone } from "@mui/icons-material";
 
 export default function Events({eventData}) {
   // in the event data, if there comes 1 from backend that is the highlighted data, so present it in container

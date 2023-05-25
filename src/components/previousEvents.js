@@ -1,23 +1,18 @@
 /** @jsxImportSource @theme-ui/core */
 import { jsx, Container, Heading, Text, Box, Image, Grid } from "theme-ui";
 import SectionHeader from "./section-header";
-import { previousEventsData as prevEvents } from "../data/previousEvents.data";
 
-export default function PreviousEvents({previousEvents}) {
+export default function PreviousEvents({ previousEvents }) {
   return (
     <section id="events" sx={{ variant: "section.events" }}>
       <Container css={{ textAlign: "center" }}>
         <SectionHeader title="Previous Events" />
       </Container>
       <Grid sx={styles.grid}>
-        {previousEvents.data.map((item,idx) => (
+        {previousEvents.data.map((item, idx) => (
           <Box sx={styles.reviewCard} key={idx}>
             <div className="card-event">
-              <Image
-                src={item.image[0]}
-                sx={styles.image}
-                alt="Client Image"
-              />
+              <Image src={item.image[0]} sx={styles.image} alt="Client Image" />
             </div>
 
             <Heading as="h3" sx={styles.title}>
@@ -34,8 +29,6 @@ export default function PreviousEvents({previousEvents}) {
     </section>
   );
 }
-
-
 
 const styles = {
   image: {
