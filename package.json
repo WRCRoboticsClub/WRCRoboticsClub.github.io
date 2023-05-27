@@ -21,6 +21,7 @@
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.5",
     "@theme-ui/core": "^0.12.0",
+    "axios": "^1.4.0",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.5",
     "glob-parent": "^5.1.2",
