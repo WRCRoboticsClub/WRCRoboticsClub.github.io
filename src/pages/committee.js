@@ -4,23 +4,24 @@ import { useState, useEffect } from "react";
 import { Container, Grid } from "theme-ui";
 import SectionHeader from "../components/section-header";
 import TeamCard from "../components/team-card";
-import axios from "axios";
+// import axios from "axios";
 // import { data } from "../data/committee.data";
 // New update with images
-export default function Committee() {
-  const [committeeData, setCommitteeData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/api/committee");
-        setCommitteeData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+export default function Committee({ committeeData }) {
+  // const [committeeData, setCommitteeData] = useState([]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get("/api/committee");
+  //       setCommitteeData(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
+  //console.log(committeeData.data);
 
   const executiveHead = committeeData.data?.["Executive Head"] || "";
   const viceExecutiveHead = committeeData.data?.["Vice-Executive Head"] || "";
@@ -50,10 +51,16 @@ export default function Committee() {
   ];
   const fifthlevel = [...generalMember];
 
-  console.log(Object.keys(committeeData).length);
+  // console.log(Object.keys(committeeData).length);
+
+  // const toplevel = [];
+  // const secondlevel = [];
+  // const thirdlevel = [];
+  // const fourthlevel = [];
+  // const fifthlevel = [];
   return (
     <section sx={styles.banner} id="committee">
-      {Object.keys(committeeData).length > 0 && (
+      {committeeData && (
         <Container sx={styles.banner.container}>
           <SectionHeader slogan="Meet Our Enthusiastic 18th Executive Committee" />
           <Grid sx={styles.grid}>
@@ -132,20 +139,16 @@ export default function Committee() {
   );
 }
 
-// export async function getStaticProps() {
-//   try {
-//     const { data, errors } = await fetch(
-//       "https://wrcrobotics.pythonanywhere.com/committee"
-//     );
-//     const committeeData = await res.json();
-//     if (errors || !data) {
-//       return { notFound: true };
-//     }
-//     return { props: { committeeData } };
-//   } catch {
-//     return { notFound: true };
-//   }
-// }
+export async function getStaticProps() {
+  const res = await fetch(`https://wrcrobotics.pythonanywhere.com/committee`);
+  const committeeData = await res.json();
+
+  return {
+    props: {
+      committeeData,
+    },
+  };
+}
 
 const styles = {
   banner: {
