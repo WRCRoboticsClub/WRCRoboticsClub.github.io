@@ -1,21 +1,21 @@
 import SingleAchievement from "../components/SingleAchievement";
 import { useState, useEffect } from "react";
 export default function Achievements({ achievementData }) {
-  const [data, setData] = useState(null);
+  //const [data, setData] = useState(null);
   //const [isLoading, setLoading] = useState(false);
-  const timestamp = new Date().getTime();
+  // const timestamp = new Date().getTime();
 
-  useEffect(() => {
-    //setLoading(true);
-    fetch(
-      `https://wrcrobotics.pythonanywhere.com/achievements?timestamp=${timestamp}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        //setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   //setLoading(true);
+  //   fetch(
+  //     `https://wrcrobotics.pythonanywhere.com/achievements?timestamp=${timestamp}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       //setLoading(false);
+  //     });
+  // }, []);
   return (
     <section id="achievement">
       {achievementData.data.map((data, index) => {
@@ -40,13 +40,28 @@ export default function Achievements({ achievementData }) {
 // }
 
 export async function getStaticProps() {
-  // Fetch data from external API
-  const res = await fetch(
-    "https://wrcrobotics.pythonanywhere.com/achievements"
-  );
+  try {
+    // Append a timestamp query parameter to bypass caching
+    const timestamp = new Date().getTime();
+    const apiUrl = `https://wrcrobotics.pythonanywhere.com/achievements?timestamp=${timestamp}`;
 
-  const achievementData = await res.json();
+    // Fetch data from the external API
+    const res = await fetch(apiUrl);
 
-  // Pass data to the page via props
-  return { props: { achievementData } };
+    if (!res.ok) {
+      throw new Error(
+        `Failed to fetch data from ${apiUrl}. Status: ${res.status}`
+      );
+    }
+
+    const achievementData = await res.json();
+
+    // Pass data to the page via props
+    return { props: { achievementData } };
+  } catch (error) {
+    // Handle any errors that occurred during the data fetching process
+    console.error("Error fetching data:", error);
+    // You can decide how to handle the error, e.g., display a fallback UI or redirect to an error page
+    return { props: { achievementData: [] } }; // Return empty data or a fallback value
+  }
 }
