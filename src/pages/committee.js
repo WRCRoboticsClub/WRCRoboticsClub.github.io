@@ -26,10 +26,11 @@ export default function Committee({ committeeData }) {
   const executiveHead = committeeData.data?.["Executive Head"] || "";
   const viceExecutiveHead = committeeData.data?.["Vice-Executive Head"] || "";
   const executiveMember = committeeData.data?.["Executive Member"] || ""; //mapping required
-  const treasurer = committeeData.data?.["Executive Memberand Treasurer"] || "";
+  // const treasurer = committeeData.data?.["Executive Memberand Treasurer"] || "";
 
   const advisor = committeeData.data?.["Advisor"] || ""; //mapping required
-  const seniorMember = committeeData.data?.["Senior Member"] || ""; //mapping required
+  const senior4th = committeeData.data?.["4th year Senior Member"] || "";
+  const senior3rd = committeeData.data?.["3rd year Senior Member"] || ""; //mapping required
   const designTransformer = committeeData.data?.["Design Transformer"] || "";
   const logisticShaft = committeeData.data?.["Logistics Shaft"] || "";
   const mediaRectifier = committeeData.data?.["Media Rectifier"] || "";
@@ -40,8 +41,8 @@ export default function Committee({ committeeData }) {
   const generalMember = committeeData.data?.["General Member"] || ""; //mapping required
 
   const toplevel = [...executiveHead, ...viceExecutiveHead];
-  const secondlevel = [...executiveMember, ...treasurer];
-  const thirdlevel = [...advisor, ...seniorMember];
+  const secondlevel = [...executiveMember];
+  const thirdlevel = [...advisor, ...senior4th, ...senior3rd];
   const fourthlevel = [
     ...designTransformer,
     ...logisticShaft,
@@ -58,7 +59,7 @@ export default function Committee({ committeeData }) {
   // const thirdlevel = [];
   // const fourthlevel = [];
   // const fifthlevel = [];
-  console.log(committeeData);
+  //console.log(committeeData);
   return (
     <section sx={styles.banner} id="committee">
       {committeeData && (
