@@ -3,15 +3,24 @@ import SingleAchievement from "../components/SingleAchievement";
 import { useEffect } from "react";
 import axios from "axios";
 
-export default function Achievements({ achievement }) {
-  //const [achievement, setAchievement] = useState([]);
+export default function Achievements() {
+  const [achievement, setAchievement] = useState([]);
 
-  //   useEffect(() => {
-  //     fetch("https://wrcrobotics.pythonanywhere.com/achievements", {
-  //       cache: "no-store",
-  //     }).then((res) => setAchievement(res.json()));
-  //   }, []);
-  //console.log(achievement);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://wrcrobotics.pythonanywhere.com/achievements"
+        );
+        setAchievement(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  console.log(achievement);
   return (
     <section id="achievement">
       {achievement.data.map((data, index) => {

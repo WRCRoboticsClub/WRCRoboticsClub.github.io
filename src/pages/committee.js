@@ -32,7 +32,7 @@ export default function Committee({ committeeData }) {
   const senior4th = committeeData.data?.["4th year Senior Member"] || "";
   const senior3rd = committeeData.data?.["3rd year Senior Member"] || ""; //mapping required
   const designTransformer = committeeData.data?.["Design Transformer"] || "";
-  const logisticShaft = committeeData.data?.["Logistics Shaft"] || "";
+  const logisticShaft = committeeData.data?.["Logistic Shaft"] || "";
   const mediaRectifier = committeeData.data?.["Media Rectifier"] || "";
   const projectCombuster = committeeData.data?.["Project Combuster"] || "";
   const publicRelationProcessor =
