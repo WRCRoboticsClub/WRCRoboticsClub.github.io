@@ -1,7 +1,16 @@
+import { useState } from "react";
 import SingleAchievement from "../components/SingleAchievement";
+import { useEffect } from "react";
 
 export default function Achievements({ achievement }) {
-  console.log(achievement);
+  //const [achievement, setAchievement] = useState([]);
+
+  //   useEffect(() => {
+  //     fetch("https://wrcrobotics.pythonanywhere.com/achievements", {
+  //       cache: "no-store",
+  //     }).then((res) => setAchievement(res.json()));
+  //   }, []);
+  //console.log(achievement);
   return (
     <section id="achievement">
       {achievement.data.map((data, index) => {
@@ -12,15 +21,16 @@ export default function Achievements({ achievement }) {
   );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch(
-    `https://wrcrobotics.pythonanywhere.com/achievements`
+export async function getStaticProps() {
+  const response = await fetch(
+    "https://wrcrobotics.pythonanywhere.com/achievements",
+    { cache: "no-store" }
   );
-  const achievement = await res.json();
+  const data = await response.json();
 
   return {
     props: {
-      achievement,
+      achievement: data,
     },
   };
 }
