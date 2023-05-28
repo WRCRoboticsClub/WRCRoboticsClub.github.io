@@ -9,7 +9,7 @@ export default function PreviousEvents({ previousEvents }) {
         <SectionHeader title="Previous Events" />
       </Container>
       <Grid sx={styles.grid}>
-        {previousEvents.data.map((item, idx) => (
+        {previousEvents.map((item, idx) => (
           <Box sx={styles.reviewCard} key={idx}>
             <div className="card-event">
               <Image src={item.image[0]} sx={styles.image} alt="Client Image" />
