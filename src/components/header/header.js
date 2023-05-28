@@ -18,7 +18,7 @@ export default function Header({ className, isOpen, setIsOpen }) {
         <Flex as="nav" sx={styles.nav}>
           {menuItems.map((menuItem, index) => (
             <Link
-              activeClass="active"
+              activeclass="active"
               href={menuItem.path}
               spy={true}
               smooth={true}
