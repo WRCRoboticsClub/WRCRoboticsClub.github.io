@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SingleAchievement from "../components/SingleAchievement";
 import { useEffect } from "react";
+import axios from "axios";
 
 export default function Achievements({ achievement }) {
   //const [achievement, setAchievement] = useState([]);
@@ -22,9 +23,8 @@ export default function Achievements({ achievement }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(
-    "https://wrcrobotics.pythonanywhere.com/achievements",
-    { cache: "no-store" }
+  const response = await axios.get(
+    "https://wrcrobotics.pythonanywhere.com/achievements"
   );
   const data = await response.json();
 
