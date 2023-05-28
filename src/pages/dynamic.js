@@ -23,23 +23,23 @@ export default function Achievements() {
   console.log(achievement);
   return (
     <section id="achievement">
-      {achievement.data.map((data, index) => {
+      {/* {achievement.data.map((data, index) => {
         //always use keys for react while mapping
         return <SingleAchievement key={index} infos={data} id={index} />;
-      })}
+      })} */}
     </section>
   );
 }
 
-export async function getStaticProps() {
-  const response = await fetch(
-    "https://wrcrobotics.pythonanywhere.com/achievements"
-  );
-  const data = await response.json();
+// export async function getStaticProps() {
+//   const response = await fetch(
+//     "https://wrcrobotics.pythonanywhere.com/achievements"
+//   );
+//   const data = await response.json();
 
-  return {
-    props: {
-      achievement: data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       achievement: data,
+//     },
+//   };
+// }
