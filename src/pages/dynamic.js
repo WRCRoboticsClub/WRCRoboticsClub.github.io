@@ -23,7 +23,7 @@ export default function Achievements({ achievement }) {
 }
 
 export async function getStaticProps() {
-  const response = await axios.get(
+  const response = await fetch(
     "https://wrcrobotics.pythonanywhere.com/achievements"
   );
   const data = await response.json();
