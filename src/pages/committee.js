@@ -58,6 +58,7 @@ export default function Committee({ committeeData }) {
   // const thirdlevel = [];
   // const fourthlevel = [];
   // const fifthlevel = [];
+  console.log(committeeData);
   return (
     <section sx={styles.banner} id="committee">
       {committeeData && (
