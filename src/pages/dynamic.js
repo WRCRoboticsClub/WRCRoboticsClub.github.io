@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import axios from "axios";
 
 export default function Achievements() {
-  const [achievement, setAchievement] = useState([]);
+  const [achievement, setAchievement] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,10 +23,11 @@ export default function Achievements() {
   console.log(achievement);
   return (
     <section id="achievement">
-      {/* {achievement.data.map((data, index) => {
-        //always use keys for react while mapping
-        return <SingleAchievement key={index} infos={data} id={index} />;
-      })} */}
+      {achievement &&
+        achievement.data.map((data, index) => {
+          //always use keys for react while mapping
+          return <SingleAchievement key={index} infos={data} id={index} />;
+        })}
     </section>
   );
 }
