@@ -23,6 +23,7 @@ export default function Committee({ committeeData }) {
   // }, []);
   //console.log(committeeData.data);
 
+  //TODO : Refactoring and cleanup
   const executiveHead = committeeData.data?.["Executive Head"] || "";
   const viceExecutiveHead = committeeData.data?.["Vice-Executive Head"] || "";
   const executiveMember = committeeData.data?.["Executive Member"] || ""; //mapping required
@@ -40,6 +41,8 @@ export default function Committee({ committeeData }) {
 
   const generalMember = committeeData.data?.["General Member"] || ""; //mapping required
 
+
+  //TODO : Refactor into array of levels
   const toplevel = [...executiveHead, ...viceExecutiveHead];
   const secondlevel = [...executiveMember];
   const thirdlevel = [...advisor, ...senior4th, ...senior3rd];
