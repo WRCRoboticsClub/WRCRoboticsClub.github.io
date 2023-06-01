@@ -1,8 +1,9 @@
 import { Box, Heading, Text, Image, Button } from "theme-ui";
 import ShapePattern1 from "../assets/shape-pattern1.png";
 import ShapePattern2 from "../assets/shape-pattern2.png";
+import Link from "next/link";
 
-function SingleAchievement({ infos }) {
+function SingleAchievement({ infos, id }) {
   return (
     <>
       <Box sx={styles.banner}>
@@ -11,20 +12,20 @@ function SingleAchievement({ infos }) {
             <Box sx={styles.gridContainer}>
               {/* Left Portion */}
               <Box>
-                <Heading sx={styles.heading}>{infos.title}</Heading>
+                <Heading sx={styles.heading}>{infos.title[0]}</Heading>
                 <p style={{ fontSize: "20px", lineHeight: "1.5" }}>
-                  Loren ipsun dolor sit anet, consectetur adipisci elit, sed
-                  eiusnod tenpor incidunt ut labore et dolore nagna aliqua. Ut
-                  enin ad ninin venian.
+                  {infos.desc[0]}
                 </p>
-                <Button>Show Details</Button>
+                <Link href={infos.fb[0]} target="_blank" passHref>
+                  <Button>Show Details</Button>
+                </Link>
               </Box>
               {/* Right Portion */}
               <Box
                 sx={styles.imageBoxContainer}
-                style={infos.id % 2 ? { order: 1 } : { order: -1 }}
+                style={id % 2 ? { order: 1 } : { order: -1 }}
               >
-                <Image src={infos.banner.src} />
+                <Image src={infos.image[0]} style={{ width: "100%" }} />
                 {/* <Image
                   sx={styles.imageBoxContainer.svgImageLeft}
                   src={ShapeLeft.src}
@@ -33,7 +34,7 @@ function SingleAchievement({ infos }) {
                   sx={styles.imageBoxContainer.svgImageRight}
                   src={ShapeRight.src}
                 /> */}
-                {infos.id % 2 ? (
+                {id % 2 ? (
                   <Box sx={styles.shapeBoxRight}>
                     <Image src={ShapePattern2.src} alt="shape" />
                   </Box>
@@ -98,6 +99,7 @@ const styles = {
   heading: {
     fontSize: "40px",
     fontWeight: "bold",
+    textAlign: "left",
   },
   para: {
     fontSize: "20px",

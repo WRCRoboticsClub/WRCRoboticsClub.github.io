@@ -66,10 +66,7 @@ export default function Payment() {
         title: "Registration Failed",
       });
     }
-    // console.log("done", response);
   };
-
-  // console.log("transactionCode", transactionCode);
 
   return (
     <section sx={styles.banner} id="register-form">

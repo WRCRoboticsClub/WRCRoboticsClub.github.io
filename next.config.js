@@ -8,7 +8,7 @@ module.exports = {
     },
   },
   images: {
-    domains: ["https://lh3.google.com/u/0/d/"],
+    domains: ["https://drive.google.com"],
   },
-  // distDir: 'build',
 };
+//https://drive.google.com/uc?export=view&id=1i-okZZdJHPC7yuQT0x2Byse8YzYz3sYk

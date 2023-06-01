@@ -1,33 +1,28 @@
 /** @jsxImportSource @theme-ui/core */
 import { jsx, Container, Heading, Text, Box, Image, Grid } from "theme-ui";
 import SectionHeader from "./section-header";
-import { previousEventsData as prevEvents } from "../data/previousEvents.data";
 
-export default function PreviousEvents() {
+export default function PreviousEvents({ previousEvents }) {
   return (
     <section id="events" sx={{ variant: "section.events" }}>
       <Container css={{ textAlign: "center" }}>
         <SectionHeader title="Previous Events" />
       </Container>
       <Grid sx={styles.grid}>
-        {prevEvents.map((item) => (
-          <Box sx={styles.reviewCard} key={item.id}>
+        {previousEvents.map((item, idx) => (
+          <Box sx={styles.reviewCard} key={idx}>
             <div className="card-event">
-              <Image
-                src={item.avatar.src}
-                sx={styles.image}
-                alt="Client Image"
-              />
+              <Image src={item.image[0]} sx={styles.image} alt="Client Image" />
             </div>
 
             <Heading as="h3" sx={styles.title}>
-              {item.title}
+              {item.title[0]}
             </Heading>
             <Heading as="h5" sx={styles.title}>
-              Date : {item.date}
+              Date : {item.date[0]}
             </Heading>
-            <Text sx={styles.description}>Type : {item.type}</Text>
-            <Text sx={styles.description}>{item.description}</Text>
+            <Text sx={styles.description}>Type : {item.type[0]}</Text>
+            <Text sx={styles.description}>{item.desc[0]}</Text>
           </Box>
         ))}
       </Grid>
