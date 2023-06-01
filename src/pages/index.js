@@ -12,7 +12,7 @@ export default function Home() {
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
           <Heading as="h4" variant="heroPrimary">
-            Robotics Club, Pashchimanchal Campus, Lamachaur, Pokhara.
+            Robotics Club, Paschimanchal Campus, Lamachaur, Pokhara.
           </Heading>
           <Text as="p" variant="heroSecondary">
             We are a team of multiple disciples teamed up to continue and
