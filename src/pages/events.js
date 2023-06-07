@@ -3,6 +3,7 @@ import PreviousEvents from "../components/previousEvents";
 //import BannerImg from "../assets/events/b_f_s_2079.jpg";
 import { useRouter } from "next/router";
 
+// TODO : event expansion page
 export default function Events({ eventData }) {
   // in the event data, if there comes 1 from backend that is the highlighted data, so present it in container
   const highlightData = eventData.data.find((e) => e.status[0] == "1");
