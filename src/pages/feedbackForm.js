@@ -5,7 +5,7 @@ import Modal from "../components/Modal";
 
 export default function feedbackForm() {
   //const baseurl = "https://roboticswrc.herokuapp.com/feedback.php";
-  const baseurl = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdFYJiAUeBVjLg_j4IGeWgU9sOruZPdxgocIt5bR-iMjAiSWQ/formResponse";
+  var baseurl = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdFYJiAUeBVjLg_j4IGeWgU9sOruZPdxgocIt5bR-iMjAiSWQ/formResponse";
 
   const [formData, setFormData] = useState({
     Name: "",
