@@ -4,12 +4,13 @@ import { Container, Box, Label, Input, Textarea, Button } from "theme-ui";
 import Modal from "../components/Modal";
 
 export default function feedbackForm() {
-  const baseurl = "https://roboticswrc.herokuapp.com/feedback.php";
+  //const baseurl = "https://roboticswrc.herokuapp.com/feedback.php";
+  const baseurl = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdFYJiAUeBVjLg_j4IGeWgU9sOruZPdxgocIt5bR-iMjAiSWQ/formResponse";
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    comment: "",
+    Name: "",
+    Email: "",
+    Feedback: "",
   });
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,12 +22,22 @@ export default function feedbackForm() {
   };
 
   const clearState = () => {
-    setFormData({ name: "", email: "", comment: "" });
+    setFormData({ name: "", email: "", feedback: "" });
   };
+
   const submitForm = async (e) => {
     e.preventDefault();
 
     setIsOpen(true);
+
+    const filteredFormData = Object.fromEntries(
+      Object.entries(formData).filter(([key, value]) => value.trim() !== "")
+    );
+
+    Object.entries(filteredFormData).forEach(([key, value]) => {
+      baseurl += `?entry.${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+    });
+
 
     const response = await fetch(baseurl, {
       method: "POST",
@@ -64,20 +75,25 @@ export default function feedbackForm() {
             onChange={onChange}
           />
 
-          <Label htmlFor="comment">
+          <Label htmlFor="feedback">
             Provide us any feedback related to Rainy session
           </Label>
           <Textarea
-            name="comment"
-            id="comment"
+            name="feedback"
+            id="feedback"
             placeholder="Feedback"
-            value={formData.comment}
+            value={formData.feedback}
             rows={6}
             mb={5}
             onChange={onChange}
           />
 
-          <Button>Submit</Button>
+          <Button
+            onClick={submitForm}
+          >
+            Submit
+          </Button>
+
         </Box>
         <Modal
           open={isOpen}
