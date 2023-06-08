@@ -38,7 +38,7 @@ export default function feedbackForm() {
       baseurl += `?entry.${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
     });
 
-
+    console.log(baseurl);
     const response = await fetch(baseurl, {
       method: "POST",
       body: JSON.stringify({ data: 1, formData }),
