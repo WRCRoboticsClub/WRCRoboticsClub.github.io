@@ -42,7 +42,7 @@ export default function Events({ eventData }) {
                     sx={styles.banner.button}
                     variant="primary"
                     onClick={() =>
-                      router.push(highlightData?.formlink[0] || "")
+                      router.push(highlightData?.formLink[0] || "")
                     }
                   >
                     Join In
