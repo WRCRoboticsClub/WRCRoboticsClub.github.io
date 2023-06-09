@@ -36,7 +36,7 @@ export default function feedbackForm() {
     );
 
     Object.entries(filteredFormData).forEach(([key, value]) => {
-      baseurl += `?entry.${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+      baseurl += `&entry.${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
     });
 
     console.log(baseurl);
