@@ -30,15 +30,13 @@ export default function feedbackForm() {
     setIsOpen(true);
 
     console.log(formData.Name, formData.Email, formData.Feedback);
-
     console.log(baseurl);
-    const urlEncodedFormData = new URLSearchParams(formData).toString();
 
     const response = await fetch(baseurl, {
       method: "POST",
-      body: urlEncodedFormData,
+      body: JSON.stringify(formData),
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
     });
 
