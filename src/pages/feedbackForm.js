@@ -31,20 +31,14 @@ export default function feedbackForm() {
 
     console.log(name, email, feedback);
 
-    const filteredFormData = Object.fromEntries(
-      Object.entries(formData).filter(([key, value]) => value.trim() !== "")
-    );
-
-    Object.entries(filteredFormData).forEach(([key, value]) => {
-      baseurl += `&entry.${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-    });
-
     console.log(baseurl);
+    const urlEncodedFormData = new URLSearchParams(formData).toString();
+
     const response = await fetch(baseurl, {
       method: "POST",
-      body: JSON.stringify({ data: 1, formData }),
+      body: urlEncodedFormData,
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
     });
 
