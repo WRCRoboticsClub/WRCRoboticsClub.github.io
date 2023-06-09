@@ -8,9 +8,9 @@ export default function feedbackForm() {
   var baseurl = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdFYJiAUeBVjLg_j4IGeWgU9sOruZPdxgocIt5bR-iMjAiSWQ/formResponse";
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    feedback: "",
+    Name: "",
+    Email: "",
+    Feedback: "",
   });
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,14 +22,14 @@ export default function feedbackForm() {
   };
 
   const clearState = () => {
-    setFormData({ name: "", email: "", feedback: "" });
+    setFormData({ Name: "", Email: "", Feedback: "" });
   };
 
   const submitForm = async (e) => {
     e.preventDefault();
     setIsOpen(true);
 
-    console.log(name, email, feedback);
+    console.log(formData.Name, formData.Email, formData.Feedback);
 
     console.log(baseurl);
     const urlEncodedFormData = new URLSearchParams(formData).toString();
