@@ -8,9 +8,9 @@ export default function feedbackForm() {
   var baseurl = "https://docs.google.com/forms/u/2/d/e/1FAIpQLSdFYJiAUeBVjLg_j4IGeWgU9sOruZPdxgocIt5bR-iMjAiSWQ/formResponse";
 
   const [formData, setFormData] = useState({
-    Name: "",
-    Email: "",
-    Feedback: "",
+    Name: "testname",
+    Email: "testmail",
+    Feedback: "testmessages"
   });
   const [isOpen, setIsOpen] = useState(false);
 
