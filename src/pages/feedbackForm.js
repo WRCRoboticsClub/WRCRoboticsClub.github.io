@@ -29,7 +29,7 @@ export default function feedbackForm() {
     e.preventDefault();
     setIsOpen(true);
 
-    console.log(formData.Name, formData.Email, formData.Feedback);
+    console.log("Formdata : ",formData.Name, formData.Email, formData.Feedback);
     console.log(baseurl);
 
     const response = await fetch(baseurl, {
