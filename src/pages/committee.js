@@ -23,6 +23,10 @@ export default function Committee({ committeeData }) {
   // }, []);
   //console.log(committeeData.data);
 
+  /*
+    TODO : Create a single array of data with positions sorted manually with precedence
+  */
+
   const executiveHead = committeeData.data?.["Executive Head"] || "";
   const viceExecutiveHead = committeeData.data?.["Vice-Executive Head"] || "";
   const executiveMember = committeeData.data?.["Executive Member"] || ""; //mapping required
