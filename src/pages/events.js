@@ -20,6 +20,7 @@ export default function Events({ eventData }) {
                 <Heading variant="heroPrimary" sx={styles.title}>
                   No any active events
                 </Heading>
+                <Text variant="subTitle">Tune in to not miss the surprise thats coming soon</Text>
               </Box>
             ) : (
               <Box sx={styles.banner.container}>
