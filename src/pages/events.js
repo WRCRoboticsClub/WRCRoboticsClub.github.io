@@ -9,6 +9,7 @@ export default function Events({ eventData }) {
   const highlightData = eventData.data.find((e) => e.status[0] == "1");
   const previousData = eventData.data.filter((e) => e.status[0] !== "1");
   // console.log(previousData);
+  console.log(eventData);
   const router = useRouter();
   return (
     <Box>
