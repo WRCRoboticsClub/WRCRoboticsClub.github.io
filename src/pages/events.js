@@ -9,8 +9,13 @@ export default function Events({ eventData }) {
   const highlightData = eventData.data.find((e) => e.status[0] == "1");
   const previousData = eventData.data.filter((e) => e.status[0] !== "1");
   // console.log(previousData);
-  console.log(eventData);
+  // console.log(highlightData);
   const router = useRouter();
+  const getFullUrl = (url) => {
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    return `http://${url}`;
+  };
+
   return (
     <Box>
       <Box sx={styles.banner} id="events">
@@ -40,15 +45,14 @@ export default function Events({ eventData }) {
                     <Text variant="subTitle">{highlightData.desc[0]}</Text>
                   </Box>
 
-                  <Button
-                    sx={styles.banner.button}
-                    variant="primary"
-                    onClick={() =>
-                      router.push(highlightData?.formLink[0] || "")
-                    }
-                  >
-                    Join In
-                  </Button>
+                  <a href={getFullUrl(highlightData?.formLink[0])}>
+                    <Button
+                      sx={styles.banner.button}
+                      variant="primary"
+                    >
+                      Join In
+                    </Button>
+                  </a>
                 </Box>
               </Box>
             )}
