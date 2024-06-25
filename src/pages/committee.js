@@ -28,7 +28,7 @@ export default function Committee({ committeeData }) {
   */
 
   const executiveHead = committeeData.data?.["Executive Head"] || "";
-  const viceExecutiveHead = committeeData.data?.["Vice-Executive Head"] || "";
+  const viceExecutiveHead = committeeData.data?.["Vice Executive Head"] || "";
   const executiveMember = committeeData.data?.["Executive Member"] || ""; //mapping required
   // const treasurer = committeeData.data?.["Executive Memberand Treasurer"] || "";
 
