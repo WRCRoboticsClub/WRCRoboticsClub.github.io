@@ -68,7 +68,7 @@ export default function Committee({ committeeData }) {
     <section sx={styles.banner} id="committee">
       {committeeData && (
         <Container sx={styles.banner.container}>
-          <SectionHeader slogan="Meet Our Enthusiastic 19th Executive Committee" />
+          <SectionHeader slogan="Meet Our Enthusiastic 20th Executive Committee" />
           <Grid sx={styles.grid}>
             {toplevel.map((level, idx) => (
               <TeamCard
