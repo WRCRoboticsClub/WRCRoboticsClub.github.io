@@ -76,10 +76,12 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
         with:
+          name: nextjs-build
           path: ./out
+
 
   # Deployment job
   deploy:
