@@ -79,7 +79,7 @@ export default function Footer() {
                 <Box sx={styles.contact.info}>
                   <Text sx={styles.contact.phone}>+9779869663583</Text>
                   <Text sx={styles.contact.subTitle}>Vice Executive Head</Text>
-                  <Text sx={styles.contact.subTitle}>Aananda Adhikari</Text>
+                  <Text sx={styles.contact.subTitle}>Sumit Sigdel</Text>
                 </Box>
               </Box>
             </Box>
