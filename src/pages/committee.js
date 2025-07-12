@@ -56,14 +56,7 @@ export default function Committee({ committeeData }) {
   ];
   const fifthlevel = [...generalMember];
 
-  // console.log(Object.keys(committeeData).length);
 
-  // const toplevel = [];
-  // const secondlevel = [];
-  // const thirdlevel = [];
-  // const fourthlevel = [];
-  // const fifthlevel = [];
-  //console.log(committeeData);
   return (
     <section sx={styles.banner} id="committee">
       {committeeData && (
@@ -73,7 +66,8 @@ export default function Committee({ committeeData }) {
             {toplevel.map((level, idx) => (
               <TeamCard
                 key={idx}
-                src={level.image[0]}
+                // src={level.image[0]}
+                src={toGoogleImageUrl(level.image[0])}
                 title={level.name[0]}
                 altText={level.name[0]}
                 designation={level.position[0]}
@@ -86,7 +80,8 @@ export default function Committee({ committeeData }) {
             {secondlevel.map((level, idx) => (
               <TeamCard
                 key={idx}
-                src={level.image[0]}
+                // src={level.image[0]}
+                src={toGoogleImageUrl(level.image[0])}
                 title={level.name[0]}
                 altText={level.name[0]}
                 designation={level.position[0]}
@@ -99,7 +94,8 @@ export default function Committee({ committeeData }) {
             {thirdlevel.map((level, idx) => (
               <TeamCard
                 key={idx}
-                src={level.image[0]}
+                // src={level.image[0]}
+                src={toGoogleImageUrl(level.image[0])}
                 title={level.name[0]}
                 altText={level.name[0]}
                 designation={level.position[0]}
@@ -112,7 +108,8 @@ export default function Committee({ committeeData }) {
             {fourthlevel.map((level, idx) => (
               <TeamCard
                 key={idx}
-                src={level.image[0]}
+                // src={level.image[0]}
+                src={toGoogleImageUrl(level.image[0])}
                 title={level.name[0]}
                 altText={level.name[0]}
                 designation={level.position[0]}
@@ -128,7 +125,8 @@ export default function Committee({ committeeData }) {
             {fifthlevel.map((level, idx) => (
               <TeamCard
                 key={idx}
-                src={level.image[0]}
+                // src={level.image[0]}
+                src={toGoogleImageUrl(level.image[0])}
                 title={level.name[0]}
                 altText={level.name[0]}
                 designation={level.position[0]}
@@ -144,6 +142,13 @@ export default function Committee({ committeeData }) {
     </section>
   );
 }
+function toGoogleImageUrl(thumbnailUrl) {
+  const match = thumbnailUrl.match(/id=([^&]+)/);
+  if (!match) return thumbnailUrl;
+  const fileId = match[1];
+  return `https://lh3.googleusercontent.com/d/${fileId}=w500`; 
+}
+
 
 export async function getStaticProps() {
   const res = await fetch(`https://wrcrobotics.pythonanywhere.com/committee`);
