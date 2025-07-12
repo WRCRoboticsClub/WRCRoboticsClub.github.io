@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <ModalStack>
         <Layout>
-          <SEO title="Robotics Club,WRC" />
+          <SEO title="Robotics Club, WRC" />
           <Component {...pageProps} />
         </Layout>
       </ModalStack>

@@ -1,55 +1,114 @@
-// TODO : Achievement desription pop up
-
+import React, { useState } from "react";
 import SingleAchievement from "../components/SingleAchievement";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { Box, Button } from "theme-ui";
 
 export default function Achievements({ achievement }) {
-  // const [achievementData, setData] = useState([]);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get("/api/achievement");
-  //       setData(response.data.data);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+  const [selected, setSelected] = useState(null);
 
-  //   fetchData();
-  // }, []);
+  const closeModal = () => setSelected(null);
 
-  //console.log(achievement.data);
   return (
-    <section id="achievement">
-      {achievement.data.map((data, index) => {
-        //always use keys for react while mapping
-        return <SingleAchievement key={index} infos={data} id={index} />;
-      })}
-    </section>
+    <>
+      <section id="achievement" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
+        {achievement.data.map((data, index) => (
+          <SingleAchievement
+            key={index}
+            infos={data}
+            id={index}
+            onShowDetails={setSelected}
+          />
+        ))}
+      </section>
+
+      {selected && (
+        <Box
+          className="achievement-popup-overlay"
+          onClick={closeModal}
+          sx={{
+            position: "fixed",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <Box
+            onClick={(e) => e.stopPropagation()}
+            sx={{
+              bg: "background",
+              p: 4,
+              borderRadius: 8,
+              maxWidth: 600,
+              maxHeight: "80vh",
+              overflowY: "auto",
+              position: "relative",
+            }}
+          >
+            <Button
+              onClick={closeModal}
+              sx={{
+                position: "absolute",
+                top: 12,
+                right: 12,
+                fontSize: 4,
+                padding: 0,
+                minWidth: 24,
+                minHeight: 24,
+                lineHeight: 1,
+              }}
+              aria-label="Close modal"
+            >
+              &times;
+            </Button>
+
+            <h2>{selected.title[0]}</h2>
+            <p>{selected.desc[0]}</p>
+
+            {selected.date && selected.date[0] && (
+              <p>
+                <strong>Date:</strong> {selected.date[0]}
+              </p>
+            )}
+
+            {selected.fb && selected.fb[0] && (
+              <p>
+                <a href={selected.fb[0]} target="_blank" rel="noopener noreferrer">
+                  Facebook Link
+                </a>
+              </p>
+            )}
+            {selected.youtube && selected.youtube[0] && (
+              <p>
+                <a href={selected.youtube[0]} target="_blank" rel="noopener noreferrer">
+                  YouTube Link
+                </a>
+              </p>
+            )}
+            {selected.insta && selected.insta[0] && (
+              <p>
+                <a href={selected.insta[0]} target="_blank" rel="noopener noreferrer">
+                  Instagram Link
+                </a>
+              </p>
+            )}
+            {selected.medium && selected.medium[0] && (
+              <p>
+                <a href={selected.medium[0]} target="_blank" rel="noopener noreferrer">
+                  Medium Link
+                </a>
+              </p>
+            )}
+          </Box>
+        </Box>
+      )}
+    </>
   );
 }
 
-// export async function getStaticPaths() {
-//   // Fetch the list of achievements IDs from the external API
-//   const res = await fetch(
-//     "https://wrcrobotics.pythonanywhere.com/achievements"
-//   );
-//   const achievementData = await res.json();
-//   const paths = achievementData.data.map((achievement) => ({
-//     params: { id: achievement.id.toString() },
-//   }));
-
-//   return {
-//     paths: [],
-//     fallback: false,
-//   };
-// }
-
 export async function getStaticProps() {
-  const res = await fetch(
-    `https://wrcrobotics.pythonanywhere.com/achievements`
-  );
+  const res = await fetch("https://wrcrobotics.pythonanywhere.com/achievements");
   const achievement = await res.json();
 
   return {
