@@ -12,15 +12,9 @@ export default function Copyright() {
         </Box>
         <Box sx={styles.designer}>
           <Text sx={styles.devName}>
-            Frontend dev:
-            <Link href="https://www.facebook.com/knight.shah/">Sunil Shah</Link>
-          </Text>
+            Managed By:
+            <Link href="https://bhandari-prashant.com.np"> Prashant Bhandari </Link>
 
-          <Text sx={styles.devName}>
-            Backend dev:
-            <Link href="https://www.facebook.com/roshan.kc.3557440">
-              Roshan KC
-            </Link>
           </Text>
         </Box>
       </Box>
