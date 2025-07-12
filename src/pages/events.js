@@ -1,15 +1,33 @@
 import { Container, Box, Heading, Text, Image, Button } from "theme-ui";
 import PreviousEvents from "../components/previousEvents";
-//import BannerImg from "../assets/events/b_f_s_2079.jpg";
 import { useRouter } from "next/router";
 
-// TODO : event expansion page
+// Add the URL transformation function
+function fixDriveUrl(url) {
+  if (!url) return "";
+
+  // Extract file ID from common Google Drive URL patterns
+  const idMatch = url.match(/(?:id=|\/d\/)([a-zA-Z0-9_-]+)/);
+  if (!idMatch) return url;
+  const fileId = idMatch[1];
+
+  // Construct lh3.googleusercontent.com direct URL for image thumbnails
+  return `https://lh3.googleusercontent.com/d/${fileId}=s0`;
+}
+
 export default function Events({ eventData }) {
-  // in the event data, if there comes 1 from backend that is the highlighted data, so present it in container
-  const highlightData = eventData.data.find((e) => e.status[0] == "1");
-  const previousData = eventData.data.filter((e) => e.status[0] !== "1");
-  // console.log(previousData);
-  // console.log(highlightData);
+  // Fix image URLs in all event data
+  const fixedEventData = {
+    ...eventData,
+    data: eventData.data.map(event => ({
+      ...event,
+      image: event.image.map(fixDriveUrl)
+    }))
+  };
+
+  const highlightData = fixedEventData.data.find((e) => e.status[0] == "1");
+  const previousData = fixedEventData.data.filter((e) => e.status[0] !== "1");
+  
   const router = useRouter();
   const getFullUrl = (url) => {
     if (url.startsWith('http://') || url.startsWith('https://')) return url;
@@ -31,6 +49,7 @@ export default function Events({ eventData }) {
             ) : (
               <Box sx={styles.banner.container}>
                 <Box sx={styles.banner.imageBox}>
+                  {/* Use transformed URL */}
                   <Image src={highlightData.image[0]} alt="banner" />
                 </Box>
                 <Box sx={styles.banner.contentBox}>
@@ -60,6 +79,7 @@ export default function Events({ eventData }) {
         </Box>
       </Box>
       <Box>
+        {/* Pass fixed data to PreviousEvents */}
         <PreviousEvents previousEvents={previousData} />
       </Box>
     </Box>
@@ -67,12 +87,9 @@ export default function Events({ eventData }) {
 }
 
 export async function getStaticProps() {
-  // Fetch data from external API
   const res = await fetch("https://wrcrobotics.pythonanywhere.com/events");
-
   const eventData = await res.json();
 
-  // Pass data to the page via props
   return { props: { eventData } };
 }
 
