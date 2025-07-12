@@ -2,8 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f8f9ff;
+  color: #33334d;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,10 +14,21 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #6366f1;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background: #818cf8;
+  color: white;
 }

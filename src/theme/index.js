@@ -1,20 +1,18 @@
 export default {
-  // example colors with dark mode
   colors: {
-    text: "#343D48", // body color and primary color
-    text_secondary: "#02073E", // secondary body color
-    heading: "#0F2137", // primary heading color
-    heading_secondary: "#0F2137", // heading color
-    background: "#FFFFFF", // body background color
-    background_secondary: "#F9FBFD", // secondary background color
-    border_color: "#E5ECF4", // border color
-    yellow: "#FFA740", // border color
-    primary: "#57CDE2", // primary button and link color
-    secondary: "#00008B", // secondary color - can be used for hover states
-    muted: "#E4E4E4", // muted color
-    accent: "#609", // a contrast color for emphasizing UI
-
-    // highlight	a background color for highlighting text
+    // Original colors from your first version
+    text: "#343D48",
+    text_secondary: "#02073E",
+    heading: "#0F2137",
+    heading_secondary: "#0F2137",
+    background: "#FFFFFF",
+    background_secondary: "#F9FBFD",
+    border_color: "#E5ECF4",
+    yellow: "#FFA740",
+    primary: "#57CDE2",  // Original teal primary
+    secondary: "#00008B", // Original deep blue secondary
+    muted: "#E4E4E4",
+    accent: "#609",
     modes: {
       dark: {
         text: "#fff",
@@ -35,39 +33,37 @@ export default {
     "1366px",
     "1620px",
   ],
+  
   fonts: {
-    body: "'DM Sans', sans-serif",
+    body: "'DM Sans', sans-serif", // Original font
     heading: "'DM Sans', sans-serif",
   },
+  
   fontSizes: [12, 15, 16, 18, 20, 22, 24, 28, 32, 36, 42, 48, 52, 64],
+  
   fontWeights: {
     body: "normal",
     heading: 500,
     bold: 700,
   },
+  
   lineHeights: {
     body: 1.8,
     heading: 1.5,
   },
+  
   letterSpacings: {
     body: "normal",
     caps: "0.2em",
     heading: "-0.5px",
   },
+  
   space: [0, 5, 10, 15, 20, 25, 30, 50, 80, 100, 120, 150],
-  // variants can use custom, user-defined names
+  
+  // Modern layout enhancements with original colors
   layout: {
     container: {
-      maxWidth: [
-        "100%",
-        null,
-        null,
-        "780px",
-        "1020px",
-        "1200px",
-        null,
-        "1310px",
-      ],
+      maxWidth: ["100%", null, null, "780px", "1020px", "1200px", null, "1310px"],
       px: [4, 6],
     },
     header: {
@@ -76,42 +72,12 @@ export default {
       py: 3,
       position: "absolute",
       width: "100%",
-    },
-    toolbar: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-    },
-    main: {},
-  },
-  section: {
-    keyFeature: {
-      pt: [8, null, 9, null, null, 10],
-      pb: ["90px", null, 9, null, null, 10, null, "165px"],
-    },
-    feature: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
-    },
-    news: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
-    },
-    coreFeature: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
-      overflow: "hidden",
-    },
-    testimonial: {
-      pt: [8, null, 8, "70px", null, 8, null, "145px"],
-      pb: ["90px", null, 9, null, null, 10, null, "190px"],
-      overflow: "hidden",
-    },
-    services: {
-      pb: ["90px", null, 9, null, null, 10, null, "150px"],
-    },
-    pricing: {
-      pt: [8, null, 9, null, null, 10, null, "180px"],
-      pb: ["90px", null, 9, null, null, 10, null, "180px"],
+      bg: "transparent",
+      backdropFilter: "blur(12px)",
     },
   },
+  
+  // Modern section styling with original colors
   sectionHeader: {
     width: ["100%", null, "540px"],
     display: "flex",
@@ -127,19 +93,37 @@ export default {
       textAlign: "center",
       fontWeight: "700",
       letterSpacing: "-.5px",
+      position: "relative",
+      "&:after": {
+        content: '""',
+        position: "absolute",
+        bottom: "-8px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "80px",
+        height: "4px",
+        bg: "primary", // Using original teal
+        borderRadius: "2px",
+      }
     },
-
     subTitle: {
       fontSize: [0, "13px", null, "14px"],
-      color: "primary",
+      color: "primary", // Teal accent
       textAlign: "center",
       letterSpacing: ["1.5px", null, "2px"],
       textTransform: "uppercase",
       fontWeight: "700",
       mb: 2,
       lineHeight: 1.5,
+      display: "inline-block",
+      bg: "rgba(87, 205, 226, 0.1)", // Teal with opacity
+      px: 3,
+      py: 1,
+      borderRadius: "20px",
     },
   },
+  
+  // Modern text styles with original colors
   text: {
     heading: {
       fontFamily: "heading",
@@ -151,16 +135,7 @@ export default {
     },
     heroPrimary: {
       color: "heading",
-      fontSize: [
-        "32px",
-        "36px",
-        "42px",
-        "40px",
-        "42px",
-        "52px",
-        "58px",
-        "66px",
-      ],
+      fontSize: ["32px", "36px", "42px", "40px", "42px", "52px", "58px", "66px"],
       lineHeight: [1.3, null, null, null, null, 1.2],
       fontWeight: 700,
       mb: [4, null, null, null, null, 5],
@@ -174,7 +149,6 @@ export default {
       color: "heading",
     },
     title: {
-      // extends the text.heading styles
       variant: "text.heading",
       fontWeight: "bold",
       fontSize: [3, null, 4],
@@ -199,52 +173,9 @@ export default {
       lineHeight: "40px",
     },
   },
-  links: {
-    default: {
-      cursor: "pointer",
-    },
-    bold: {
-      fontWeight: "bold",
-    },
-    nav: {
-      display: ["none", null, "inline-block"],
-      px: 25,
-      fontWeight: "normal",
-    },
-    blog: {
-      display: "block",
-      px: 0,
-      color: "inherit",
-      textDecoration: "none",
-      fontSize: "inherit",
-      transition: "color 0.25s",
-      "&:hover": {
-        color: "primary",
-      },
-    },
-    footer: {
-      display: "block",
-      px: 0,
-      color: "inherit",
-      textDecoration: "none",
-    },
-    logo: {
-      display: "flex",
-    },
-  },
-  images: {
-    avatar: {
-      width: 48,
-      height: 48,
-      borderRadius: 99999,
-    },
-  },
-  // variants for buttons
+  
+  // Modern buttons with original colors
   buttons: {
-    menu: {
-      display: [null, null, "none"],
-    }, // default variant for MenuButton
-    // you can reference other values defined in the theme
     defaultBtn: {
       borderRadius: "45px",
       fontSize: ["14px", null, null, 2],
@@ -253,18 +184,34 @@ export default {
       fontFamily: "body",
       cursor: "pointer",
       lineHeight: 1.2,
-      transition: "all 0.25s",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
       fontWeight: 500,
       "&:focus": {
         outline: 0,
+      },
+      "&:hover": {
+        transform: "translateY(-3px)",
+        boxShadow: "0 6px 12px rgba(0,0,0,0.1)",
       },
     },
     primary: {
       variant: "buttons.defaultBtn",
       color: "white",
-      bg: "primary",
+      bg: "primary", // Original teal
       "&:hover": {
-        boxShadow: "rgba(233, 76, 84, 0.57) 0px 9px 20px -5px",
+        bg: "#4abfd4", // Slightly darker teal
+        boxShadow: "0 6px 12px rgba(87, 205, 226, 0.3)",
+      },
+    },
+    secondary: {
+      variant: "buttons.defaultBtn",
+      border: "2px solid",
+      borderColor: "primary", // Teal border
+      color: "primary", // Teal text
+      bg: "transparent",
+      "&:hover": {
+        color: "white",
+        bg: "primary", // Teal background
       },
     },
     whiteButton: {
@@ -272,36 +219,29 @@ export default {
       color: "heading_secondary",
       bg: "white",
       "&:hover": {
-        boxShadow: "rgba(0, 0, 0, 0.5) 0px 12px 24px -10px",
-      },
-    },
-    secondary: {
-      variant: "buttons.defaultBtn",
-      border: "2px solid",
-      borderColor: "primary",
-      color: "primary",
-      bg: "transparent",
-      padding: ["10px 15px", null, "15px 30px"],
-      "&:hover": {
-        color: "white",
-        bg: "primary",
-      },
-    },
-    textButton: {
-      variant: "buttons.defaultBtn",
-      backgroundColor: "transparent",
-      cursor: "pointer",
-      color: "white",
-      svg: {
-        fontSize: [4, 6],
-        mr: 2,
+        bg: "#f0f8ff", // Light blue background
       },
     },
   },
+  
+  // Modern cards with original colors
   cards: {
     primary: {
       padding: 2,
       borderRadius: 4,
+      // Modern enhancements:
+      bg: "background",
+      borderRadius: "16px",
+      overflow: "hidden",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      border: "1px solid",
+      borderColor: "border_color",
+      "&:hover": {
+        transform: "translateY(-5px)",
+        boxShadow: "0 12px 32px rgba(0,0,0,0.1)",
+        borderColor: "primary", // Teal accent on hover
+      },
     },
     offer: {
       display: "flex",
@@ -314,54 +254,45 @@ export default {
       background: "#FFFFFF",
       border: "1px solid #EDEFF6",
       borderRadius: 5,
+      // Modern enhancements:
+      transition: "all 0.3s ease",
+      "&:hover": {
+        transform: "translateY(-3px)",
+        boxShadow: "0 6px 12px rgba(0,0,0,0.05)",
+      },
     },
     featureCard: {
       display: "flex",
       alignItems: "flex-start",
       flexDirection: "row",
       p: 3,
-    },
-  },
-  forms: {
-    label: {
-      fontSize: 1,
-      fontWeight: "bold",
-    },
-    input: {
-      borderRadius: 8,
+      // Modern enhancements:
+      bg: "background",
+      borderRadius: "12px",
+      border: "1px solid",
       borderColor: "border_color",
-      height: 60,
-      "&:focus": {
-        borderColor: "primary",
-        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
-        outline: "none",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
+      transition: "all 0.3s ease",
+      "&:hover": {
+        transform: "translateY(-3px)",
+        boxShadow: "0 8px 16px rgba(0,0,0,0.08)",
       },
     },
   },
-
-  badges: {
-    primary: {
-      color: "background",
-      bg: "#28A5FF",
-      borderRadius: 30,
-      p: "3px 11px",
-      fontSize: 1,
-      letterSpacing: "-0.5px",
-    },
-    outline: {
-      color: "primary",
-      bg: "transparent",
-      boxShadow: "inset 0 0 0 1px",
-    },
-  },
-
+  
+  // Modern global styles
   styles: {
-    // To add base, top-level styles to the <body> element, use theme.styles.root.
     root: {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
       fontSmoothing: "antialiased",
+      WebkitFontSmoothing: "antialiased",
+      MozOsxFontSmoothing: "grayscale",
+      "::selection": {
+        bg: "primary", // Teal selection
+        color: "white",
+      },
       // Modal Global Style
       ".modal-video-close-btn": {
         cursor: "pointer",
@@ -370,14 +301,21 @@ export default {
         margin: 6,
         width: "auto",
       },
+      // Smooth transitions for interactive elements
+      a: {
+        transition: "color 0.2s ease",
+        "&:hover": {
+          color: "primary", // Teal on hover
+        }
+      }
     },
     // Divider styles
     hr: {
       border: 0,
       borderBottom: "1px solid",
       borderColor: "#D9E0E7",
+      my: 5,
     },
-    // also you can use other HTML elements style here
     ul: {
       listStyle: "none",
     },

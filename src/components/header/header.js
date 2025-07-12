@@ -70,12 +70,11 @@ const positionAnim = keyframes`
     transition: all 0.4s ease;
   }
 `;
-
 const styles = {
   header: {
     color: "text",
     fontWeight: "body",
-    py: 4,
+    py: 3,
     width: "100%",
     position: "absolute",
     top: 0,
@@ -91,35 +90,36 @@ const styles = {
     "&.sticky": {
       position: "fixed",
       backgroundColor: "background",
-      color: "#000000",
-      boxShadow: "0 1px 2px rgba(0, 0, 0, 0.06)",
-      py: 3,
-      "nev > a": {
-        color: "text",
-      },
+      color: "text",
+      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.08)",
+      py: 2,
     },
   },
   container: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    px: [3, 4],
     logo: {
-      width: "200px",
+      width: ["140px", "180px", "200px"],
+      height: "auto",
     },
   },
   nav: {
     mx: "auto",
     display: "none",
     "@media screen and (min-width: 1024px)": {
-      display: "block",
+      display: "flex",
+      gap: "20px",
     },
     a: {
-      fontSize: 3,
-      fontWeight: "body",
-      px: 3,
+      fontSize: [2, 3],
+      fontWeight: 500,
+      px: 2,
       cursor: "pointer",
-      lineHeight: "1.2",
-      transition: "all 0.15s",
+      lineHeight: "1.4",
+      transition: "color 0.25s ease",
+      color: "text",
       "&:hover": {
         color: "secondary",
       },
@@ -131,19 +131,21 @@ const styles = {
   rightContainer: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
+    gap: "10px",
 
     button: {
       fontSize: "14px",
-      fontWeight: "400",
-      ml: "10px",
-      mr: "0px",
+      fontWeight: "500",
+      ml: "5px",
+      px: "12px",
+      py: "8px",
     },
     select: {
-      fontSize: "16px",
+      fontSize: "15px",
       fontWeight: "500",
-      px: "10px",
-      py: "10px",
+      px: "8px",
+      py: "6px",
+      borderRadius: "4px",
     },
   },
 };
