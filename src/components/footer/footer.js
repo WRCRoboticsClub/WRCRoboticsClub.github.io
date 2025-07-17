@@ -62,7 +62,7 @@ export default function Footer() {
             </Box>
 
             <Box sx={styles.contact}>
-              <Text sx={styles.contact.title}>Contact Us</Text>
+              <Text sx={styles.contact.title}>Contact Us </Text>
               <Text sx={styles.contact.email}>robotics@wrc.edu.np</Text>
               <Box sx={styles.contact.container}>
                 {/* <Box sx={styles.contact.info}>
@@ -103,23 +103,23 @@ export default function Footer() {
     </>
   );
 }
-
 const styles = {
   footer: {
-    padding: "1rem",
-
+    padding: "1.5rem",
     footerBottomArea: {
       borderTop: "1px solid",
       borderTopColor: "border_color",
       display: "flex",
-      pt: [7, null, 8],
-      pb: ["40px", null, "100px"],
-      textAlign: "center",
       flexDirection: "row",
       justifyContent: "space-between",
+      pt: [6, null, 8],
+      pb: ["40px", null, "80px"],
+      textAlign: "center",
+      gap: "20px",
 
       "@media screen and (max-width:700px)": {
         flexDirection: "column",
+        gap: "30px",
       },
     },
     menus: {
@@ -136,35 +136,36 @@ const styles = {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      flexWrap: "wrap",
       flexDirection: "column",
+      gap: "6px",
     },
     link: {
       fontSize: [1, "15px"],
       color: "text",
       fontWeight: "600",
       cursor: "pointer",
-      transition: "all 0.35s",
+      transition: "color 0.3s ease",
       display: "block",
       textDecoration: "underline",
       lineHeight: [1.5, null, 1.8],
       px: [2, null, 4],
+      letterSpacing: ["1.2px", null, "1.5px"],
       ":hover": {
         color: "primary",
       },
-
-      letterSpacing: ["1.5px", null, "2px"],
     },
     logo: {
-      width: "150px",
-      height: "60px",
+      width: "140px",
+      height: "auto",
+      mb: 2,
     },
   },
   footerLink: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
     alignItems: "center",
+    gap: "10px",
+
     "@media screen and (max-width: 1024px)": {
       display: "none",
     },
@@ -174,78 +175,66 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    gap: "15px",
 
     icon: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       color: "text",
-      fontSize: 25,
-      mr: "15px",
-      transition: "all 0.25s",
+      fontSize: 26,
+      transition: "color 0.3s ease, transform 0.3s ease",
       cursor: "pointer",
-      ":last-child": {
-        mr: "0",
-      },
       "&:hover": {
         color: "primary",
+        transform: "scale(1.1)",
       },
     },
   },
   contact: {
-    // padding: "1rem",
-    // alignItems: "right",
     title: {
-      fontSize: [1, "25px"],
+      fontSize: [2, "22px"],
       color: "text",
       fontWeight: "500",
-      fontFamily: "Roboto,sans-serif",
+      fontFamily: "Roboto, sans-serif",
       mb: 2,
-      cursor: "pointer",
-      transition: "all 0.35s",
-      display: "block",
-      textDecoration: "none",
     },
     info: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      flexWrap: "wrap",
       flexDirection: "column",
+      gap: "4px",
       px: [2, null, 4],
     },
     phone: {
-      fontSize: [1, "17px", "20px"],
+      fontSize: [1, "17px", "19px"],
       color: "primary",
       fontWeight: "700",
-      fontFamily: "Verdana,sans-serif",
-      mb: 2,
-      cursor: "pointer",
+      fontFamily: "Verdana, sans-serif",
     },
     email: {
-      fontSize: [1, "27px"],
+      fontSize: [1, "22px"],
       color: "primary",
       fontWeight: "700",
-      fontFamily: "Verdana,sans-serif",
+      fontFamily: "Verdana, sans-serif",
       mb: 2,
-      cursor: "pointer",
     },
     subTitle: {
       fontSize: [0, "13px", null, "14px"],
-      // color: "primary",
       textAlign: "center",
-      letterSpacing: ["1.5px", null, "2px"],
+      letterSpacing: ["1.2px", null, "1.5px"],
       textTransform: "uppercase",
       fontWeight: "600",
-      mb: 2,
-      lineHeight: 1.5,
+      color: "text",
     },
     container: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      flexWrap: "wrap",
+      gap: "20px",
       mt: [3, 4],
     },
   },
 };
-

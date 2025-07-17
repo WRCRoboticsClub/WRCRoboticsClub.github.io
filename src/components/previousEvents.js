@@ -6,7 +6,7 @@ export default function PreviousEvents({ previousEvents }) {
   return (
     <section id="events" sx={{ variant: "section.events" }}>
       <Container css={{ textAlign: "center" }}>
-        <SectionHeader title="Previous Events" />
+        <SectionHeader title=" Events" />
       </Container>
       <Grid sx={styles.grid}>
         {previousEvents.map((item, idx) => (

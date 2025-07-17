@@ -14,7 +14,6 @@ export default function Copyright() {
           <Text sx={styles.devName}>
             Managed By:
             <Link href="https://bhandari-prashant.com.np"> Prashant Bhandari </Link>
-
           </Text>
         </Box>
       </Box>
@@ -27,47 +26,44 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "200px",
+    minHeight: "150px",
     backgroundColor: "primary",
+    px: [3, 4],
+    py: [3, 4],
   },
   content: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    gap: "8px",
   },
   copyright: {
     display: "flex",
     alignItems: "center",
+    gap: "8px",
   },
   text: {
-    fontSize: [1, "15px"],
-    width: "100%",
+    fontSize: [1, 2],
     color: "white",
-    fontWeight: "400",
-    fontFamily: "Verdana,sans-serif",
+    fontWeight: 400,
+    fontFamily: "Verdana, sans-serif",
   },
   image: {
-    width: "100px",
-    height: "70px",
+    width: ["60px", "80px"],
+    height: "auto",
   },
   designer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    // width: "500px",
   },
   devName: {
-    fontSize: [1, "15px"],
-    // width: "100%",
-    padding: "10px",
+    fontSize: [1, 2],
+    padding: "6px 12px",
     color: "white",
-    fontWeight: "400",
-    fontFamily: "Verdana,sans-serif",
+    fontWeight: 400,
+    fontFamily: "Verdana, sans-serif",
     textTransform: "uppercase",
+    letterSpacing: "0.5px",
   },
-  //   hr: {
-  //     width: "40%",
-  //     border: "none",
-  //     borderTop: "1px solid white",
-  //   },
 };

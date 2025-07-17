@@ -5,16 +5,11 @@ import ShapePattern2 from "../assets/shape-pattern2.png";
 
 function fixDriveUrl(url) {
   if (!url) return "";
-
-  // Extract file ID from common Google Drive URL patterns
   const idMatch = url.match(/(?:id=|\/d\/)([a-zA-Z0-9_-]+)/);
   if (!idMatch) return url;
   const fileId = idMatch[1];
-
-  // Construct lh3.googleusercontent.com direct URL for image thumbnails
   return `https://lh3.googleusercontent.com/d/${fileId}=s0`;
 }
-
 
 function SingleAchievement({ infos, id, onShowDetails }) {
   const imageUrl = fixDriveUrl(infos.image[0]);
@@ -27,7 +22,7 @@ function SingleAchievement({ infos, id, onShowDetails }) {
             {/* Left Portion */}
             <Box>
               <Heading sx={styles.heading}>{infos.title[0]}</Heading>
-              <p style={{ fontSize: "20px", lineHeight: "1.5" }}>
+              <p style={{ fontSize: "18px", lineHeight: "1.6", marginBottom: "12px", color: "#444" }}>
                 {infos.desc[0].slice(0, 100)}...
               </p>
               <Button onClick={() => onShowDetails(infos)}>Show Details</Button>
@@ -37,7 +32,7 @@ function SingleAchievement({ infos, id, onShowDetails }) {
               sx={styles.imageBoxContainer}
               style={id % 2 ? { order: 1 } : { order: -1 }}
             >
-              <Image src={imageUrl} style={{ width: "100%" }} />
+              <Image src={imageUrl} sx={{ width: "100%", borderRadius: "8px", objectFit: "cover" }} />
               {id % 2 ? (
                 <Box sx={styles.shapeBoxRight}>
                   <Image src={ShapePattern2.src} alt="shape" />
@@ -59,7 +54,6 @@ export default SingleAchievement;
 
 const styles = {
   imageBoxContainer: {
-    objectFit: "cover",
     position: "relative",
     "@media screen and (max-width:500px)": {
       order: "-10 !important",
@@ -67,39 +61,43 @@ const styles = {
   },
   gridContainer: {
     display: "grid",
-    gridGap: 8,
-    gridTemplateColumns: ["auto", "auto", "1fr 1fr"],
+    gridGap: 4,
+    gridTemplateColumns: ["1fr", null, "1fr 1fr"],
     alignItems: "center",
+    gap: [3, 4],
   },
   heading: {
-    fontSize: "40px",
+    fontSize: ["26px", "32px", "36px", "40px"],
     fontWeight: "bold",
     textAlign: "left",
+    mb: 2,
+    color: "text",
   },
   banner: {
-    pt: ["140px", "145px", "155px", "170px", null, null, "180px", "215px"],
-    pb: [2, null, 0, null, 2, 0, null, 5],
+    pt: ["100px", "120px", "140px", "160px", null, null, "180px", "200px"],
+    pb: [3, 4, 5],
     position: "relative",
     zIndex: 2,
     container: {
       minHeight: "inherit",
-      padding: "40px",
+      px: [3, 4],
+      py: [3, 4],
       maxWidth: "1200px",
       mx: "auto",
     },
   },
   shapeBoxLeft: {
     position: "absolute",
-    bottom: -68,
-    left: -160,
+    bottom: -60,
+    left: -140,
     zIndex: -1,
-    display: ["none", null, "none", null, null, "inline-block"],
+    display: ["none", null, "inline-block"],
   },
   shapeBoxRight: {
     position: "absolute",
-    bottom: -65,
-    right: -150,
+    bottom: -60,
+    right: -140,
     zIndex: -1,
-    display: ["none", null, "none", null, null, "inline-block"],
+    display: ["none", null, "inline-block"],
   },
 };
