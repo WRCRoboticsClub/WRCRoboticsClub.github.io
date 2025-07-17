@@ -1,64 +1,72 @@
 /** @jsxImportSource @theme-ui/core */
-import ShapeLeft from "../assets/shape-left.png";
-import ShapeRight from "../assets/shape-right.png";
-import { Container, Box, Heading, Text, Image, Button } from "theme-ui";
-import BannerImg from "../assets/homepage_photo.jpg";
+import { Container, Box, Heading, Text, Button } from "theme-ui";
+import Lottie from "lottie-react";
+import RobotAnimation from "../assets/robot-hero.json";
 import KeyFeature from "../components/KeyFeature/key-feature";
 import Services from "../components/services/service";
+import Testimonials from "../components/Testimonials";
 
 export default function Home() {
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
+        {/* Left - Content */}
         <Box sx={styles.banner.contentBox}>
           <Heading as="h4" variant="heroPrimary">
-            Robotics Club, Pashchimanchal Campus, Lamachaur, Pokhara.
+            Robotics Club, Pashchimanchal Campus, Pokhara.
           </Heading>
           <Text as="p" variant="heroSecondary">
-            We are a team of multiple disciples teamed up to continue and
-            improve the culture of innovation, creative learning and teaching
-            with extracurricular activities around campus.
+          We are a team of passionate students working to promote innovation, creative learning,
+          and technical growth through engaging activities beyond the classroom.
           </Text>
           <Button variant="primary">Explore</Button>
         </Box>
-        <Box sx={styles.banner.imageBox}>
-          <Image src={BannerImg.src} alt="banner" />
+
+        {/* Right - Animation */}
+        <Box sx={styles.banner.animationBox}>
+          <Lottie
+            animationData={RobotAnimation}
+            loop
+            style={{ width: "auto", maxWidth: "20000px", height: "auto" }}
+          />
         </Box>
       </Container>
       <KeyFeature />
-      <Services />
+      {/* <Services /> */}
+      < Testimonials />
     </section>
   );
 }
 
 const styles = {
   banner: {
-    pt: ["140px", "145px", "155px", "170px", null, null, "180px", "215px"],
+    pt: ["120px", "130px", "140px", "150px", "180px"],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: "relative",
     zIndex: 2,
 
     container: {
-      minHeight: "inherit",
       display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
+      flexDirection: ["column", "column", "row"],
+      justifyContent: "space-between",
+      alignItems: "center",
+      px: [3, 4, 5],
+      gap: [4, 5, 6],
     },
+
     contentBox: {
-      width: ["100%", "90%", "535px", null, "57%", "60%", "68%", "60%"],
-      mx: "auto",
-      textAlign: "center",
-      mb: ["40px", null, null, null, null, 7],
+      flex: "1",
+      textAlign: ["center", "center", "center"],
+      maxWidth: ["100%", "90%", "50%"],
+      mb: ["30px", "40px", 0],
     },
-    imageBox: {
+
+    animationBox: {
+      flex: "1",
+      display: "flex",
       justifyContent: "center",
-      textAlign: "center",
-      display: "inline-flex",
-      mb: [0, null, -6, null, null, "-40px", null, -3],
-      img: {
-        position: "relative",
-        height: [200, "auto"],
-      },
+      alignItems: "center",
+      maxWidth: ["100%", "100%", "50%"],
     },
   },
 };

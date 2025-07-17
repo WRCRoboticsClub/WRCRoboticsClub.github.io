@@ -12,7 +12,6 @@ export default function KeyFeature() {
         <SectionHeader
           title="Achievements"
         />
-
         <Grid sx={styles.grid}>
           {data.map((item) => (
             <FeatureCardColumn
