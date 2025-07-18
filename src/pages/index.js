@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
-        {/* Left - Content */}
+
         <Box sx={styles.banner.contentBox}>
           <Heading as="h4" variant="heroPrimary">
             Robotics Club, Pashchimanchal Campus, Pokhara.

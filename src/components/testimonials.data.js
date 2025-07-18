@@ -27,6 +27,13 @@ export const data = [
         text: "Must amazing place to learn and grow in the field of robotics. The team is very supportive and knowledgeable.",
   
       },
+      {
+        id: 5,
+        name: "Sabina Paudel",
+        role: "Design Transformer",
+        text: " At the crossroads of code, ceativity and circuits. It's a place where ideas come to life.",
+  
+      },
 
   ];
   
