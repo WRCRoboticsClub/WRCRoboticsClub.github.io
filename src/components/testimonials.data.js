@@ -31,7 +31,7 @@ export const data = [
         id: 5,
         name: "Sabina Paudel",
         role: "Design Transformer",
-        text: " At the crossroads of code, ceativity and circuits. It's a place where ideas come to life.",
+        text: " At the crossroads of code, ceativity and circuits.",
   
       },
 
