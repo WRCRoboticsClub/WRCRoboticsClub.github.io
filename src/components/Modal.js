@@ -1,5 +1,5 @@
 /** @jsxImportSource @theme-ui/core */
-import { ModalStack } from "@mattjennings/react-modal-stack";
+import { Box, Heading, Text, Button } from "theme-ui";
 
 export default function Modal({ open, setOpen, title, message }) {
   const closeModal = () => {
@@ -11,88 +11,114 @@ export default function Modal({ open, setOpen, title, message }) {
   }
 
   return (
-    <ModalStack
-      renderModals={({ stack }) => (
-        <>
-          {stack.length > 0 && <div sx={styles.stack} />}
-          {stack.map((modal, index) => {
-            return (
-              <modal.component
-                key={index}
-                open={modal === stack[stack.length - 1]}
-                {...modal.props}
-              />
-            );
-          })}
-        </>
-      )}
-    >
-      <div sx={styles.container}>
-        <div sx={styles.containerBox}>
-          <h2>{title}</h2>
-          <p>{message}</p>
+    <>
+      {/* Backdrop */}
+      <Box sx={styles.backdrop} onClick={closeModal} />
+      
+      {/* Modal */}
+      <Box sx={styles.modal}>
+        <Box sx={styles.modalContent}>
+          {/* Success Icon */}
+          <Box sx={styles.iconWrapper}>
+            <Box sx={styles.successIcon}>✓</Box>
+          </Box>
 
-          <div>
-            <button onClick={() => closeModal()}>Close</button>
-            {/* {isConfirm && (
-              <button sx={styles.submitButton} onClick={(e) => submitForm(e)}>
-                Submit
-              </button>
-            )} */}
-          </div>
-        </div>
-      </div>
-    </ModalStack>
+          <Heading sx={styles.title}>{title}</Heading>
+          <Text sx={styles.message}>{message}</Text>
+
+          <Button onClick={closeModal} sx={styles.button}>
+            Got it!
+          </Button>
+        </Box>
+      </Box>
+    </>
   );
 }
 
 const styles = {
-  stack: {
-    zIndex: 90,
-    position: `fixed`,
+  backdrop: {
+    position: "fixed",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    background: "rgba(0,0,0,0.3)",
-  },
-  container: {
-    zIndex: 100,
-    position: `fixed`,
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    display: `flex`,
-    justifyContent: `center`,
-    alignItems: "center",
+    background: "rgba(0, 0, 0, 0.5)",
     backdropFilter: "blur(5px)",
+    zIndex: 1000,
+    animation: "fadeIn 0.3s ease-out",
   },
-  containerBox: {
-    width: 400,
-    height: 250,
+
+  modal: {
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    zIndex: 1001,
+    animation: "scaleIn 0.3s ease-out",
+  },
+
+  modalContent: {
+    background: "rgba(255, 255, 255, 0.95)",
+    backdropFilter: "blur(20px)",
+    border: "1px solid rgba(255, 255, 255, 0.3)",
+    borderRadius: "2xl",
+    p: 8,
+    maxWidth: "400px",
+    width: "90vw",
     textAlign: "center",
-    padding: "0 16px",
-    borderRadius: "10px",
-    background: "white",
-    border: "1px solid #e5e5e5",
-    boxShadow:
-      "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    boxShadow: "2xl",
   },
-  // containerTable: {
-  //   marginTop: "100px",
-  //   width: "80%",
-  //   height: "75%",
-  //   overflowY: "scroll",
-  //   textAlign: "center",
-  //   padding: "0 16px",
-  //   borderRadius: "10px",
-  //   background: "white",
-  //   border: "1px solid #e5e5e5",
-  //   boxShadow:
-  //     "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-  // },
-  // submitButton: {
-  //   marginLeft: "10px",
-  // },
+
+  iconWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    mb: 4,
+  },
+
+  successIcon: {
+    width: "60px",
+    height: "60px",
+    borderRadius: "full",
+    background: "linear-gradient(135deg, #10b981, #059669)",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "2rem",
+    fontWeight: "bold",
+    boxShadow: "0 0 20px rgba(16, 185, 129, 0.3)",
+    animation: "scaleIn 0.5s ease-out 0.2s both",
+  },
+
+  title: {
+    fontSize: 5,
+    fontWeight: "bold",
+    color: "heading",
+    mb: 3,
+  },
+
+  message: {
+    fontSize: 3,
+    color: "text_secondary",
+    lineHeight: "relaxed",
+    mb: 6,
+  },
+
+  button: {
+    px: 6,
+    py: 3,
+    fontSize: 2,
+    fontWeight: "semibold",
+    borderRadius: "lg",
+    background: "linear-gradient(135deg, #6366f1, #4f46e5)",
+    color: "white",
+    border: "none",
+    cursor: "pointer",
+    transition: "base",
+    "&:hover": {
+      background: "linear-gradient(135deg, #4f46e5, #4338ca)",
+      transform: "translateY(-2px)",
+      boxShadow: "lg",
+    },
+  },
 };

@@ -34,20 +34,19 @@ const social = [
   },
 ];
 
-export default function MobileDrawer({ isDrawerOpen, setIsDrawerOpen }) {
-  //const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+export default function MobileDrawer({ isOpen, setIsOpen }) {
   return (
     <Box sx={styles.handler}>
-      <Box sx={styles.burger} onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+      <Box sx={styles.burger} onClick={() => setIsOpen(!isOpen)}>
         <Box sx={styles.line1}></Box>
         <Box sx={styles.line2}></Box>
         <Box sx={styles.line3}></Box>
       </Box>
-      {isDrawerOpen === true ? (
+      {isOpen === true ? (
         <Box sx={styles.content}>
           <Close
             sx={styles.close}
-            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+            onClick={() => setIsOpen(!isOpen)}
           />
           <Box sx={styles.menu}>
             {menuItems.map((menuItem, index) => (
@@ -82,8 +81,8 @@ export default function MobileDrawer({ isDrawerOpen, setIsDrawerOpen }) {
 }
 
 const drawerAnimation = keyframes`
- 0% {  width: 0px; }
- 100% {  width: 40%; opacity: 1; }
+ 0% { transform: translateX(100%); opacity: 0; }
+ 100% { transform: translateX(0); opacity: 1; }
 `;
 
 const styles = {
@@ -98,33 +97,40 @@ const styles = {
       display: "none",
     },
   },
+  
   burger: {
     cursor: "pointer",
+    transition: "all 0.3s ease",
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
   },
+  
   line1: {
     width: "26px",
     height: "3px",
-    backgroundColor: "#AFA4DB",
+    background: "linear-gradient(90deg, #6366f1, #4f46e5)",
     margin: "5px",
+    borderRadius: "2px",
+    transition: "all 0.3s ease",
   },
+  
   line2: {
-    width: "26px",
+    width: "26px", 
     height: "3px",
-    backgroundColor: "#AFA4DB",
+    background: "linear-gradient(90deg, #6366f1, #4f46e5)",
     margin: "5px",
+    borderRadius: "2px",
+    transition: "all 0.3s ease",
   },
+  
   line3: {
     width: "26px",
-    height: "3px",
-    backgroundColor: "#AFA4DB",
+    height: "3px", 
+    background: "linear-gradient(90deg, #6366f1, #4f46e5)",
     margin: "5px",
-  },
-  drawer: {
-    width: "100%",
-    height: "100%",
-    backgroundColor: "dark",
-    position: "fixed",
-    zIndex: "1000",
+    borderRadius: "2px", 
+    transition: "all 0.3s ease",
   },
 
   close: {
@@ -132,26 +138,39 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     position: "absolute",
-    top: "0px",
-    right: "10px",
+    top: "20px",
+    right: "20px",
     zIndex: "1",
     cursor: "pointer",
-    width: "50px",
-    height: "50px",
+    width: "40px",
+    height: "40px",
+    background: "rgba(255, 255, 255, 0.1)",
+    borderRadius: "50%",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255, 255, 255, 0.2)",
+    color: "white",
+    transition: "all 0.3s ease",
+    
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.2)",
+      transform: "scale(1.1)",
+    },
   },
 
   content: {
-    position: "absolute",
+    position: "fixed",
     right: "0px",
     top: "0",
-    width: "40%",
+    width: ["280px", "320px"],
     height: "100vh",
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#F4F5FF",
+    background: "rgba(255, 255, 255, 0.95)",
+    backdropFilter: "blur(20px)",
+    borderLeft: "1px solid rgba(99, 102, 241, 0.1)",
     zIndex: "1000",
     animation: `${drawerAnimation} 0.4s ease`,
-    backdropFilter: "blur(5px)",
+    boxShadow: "-10px 0 30px rgba(0, 0, 0, 0.1)",
   },
 
   menu: {
@@ -159,20 +178,31 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    py: "30px",
+    pt: "80px",
+    px: "20px",
+    
     a: {
-      fontSize: "16px",
-      fontWeight: "500",
-      color: "text_white",
-      py: "20px",
+      fontSize: "18px",
+      fontWeight: "medium",
+      color: "text",
+      py: "15px",
+      px: "20px",
       cursor: "pointer",
-      borderBottom: "1px solid #e8e5e5",
-      transition: "all 0.25s",
+      borderRadius: "lg",
+      transition: "all 0.3s ease",
+      width: "100%",
+      textAlign: "center",
+      position: "relative",
+      
       "&:hover": {
-        color: "secondary",
+        color: "primary",
+        background: "rgba(99, 102, 241, 0.05)",
+        transform: "translateX(5px)",
       },
+      
       "&.active": {
-        color: "secondary",
+        color: "primary",
+        background: "rgba(99, 102, 241, 0.1)",
       },
     },
   },
@@ -182,8 +212,9 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    py: "30px",
-    // mt: "auto",
+    px: "20px",
+    mt: "auto",
+    pb: "40px",
   },
 
   social: {
@@ -191,37 +222,28 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    gap: "15px",
 
     icon: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "text",
-      fontSize: 20,
-      mr: "15px",
-      transition: "all 0.25s",
+      color: "text_secondary",
+      fontSize: "20px",
+      width: "45px",
+      height: "45px",
+      borderRadius: "50%",
+      background: "rgba(99, 102, 241, 0.05)",
+      border: "1px solid rgba(99, 102, 241, 0.1)",
+      transition: "all 0.3s ease",
       cursor: "pointer",
-      // color: ["green", "blue", "red", "yellow"],
-      ":last-child": {
-        mr: "0",
-      },
+      
       "&:hover": {
         color: "primary",
+        background: "rgba(99, 102, 241, 0.1)",
+        transform: "translateY(-2px)",
+        boxShadow: "0 4px 15px rgba(99, 102, 241, 0.2)",
       },
     },
-  },
-
-  button: {
-    color: "white",
-    fontSize: "14px",
-    fw: "700",
-    height: "45px",
-    borderRadius: "5px",
-    cursor: "pointer",
-    width: "100%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    py: "0",
   },
 };
