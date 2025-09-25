@@ -1,6 +1,6 @@
 /** @jsxImportSource @theme-ui/core */
 import { useState, useEffect } from "react";
-import { Container, Box, Label, Input, Textarea, Button } from "theme-ui";
+import { Container, Box, Label, Input, Textarea, Button, Text, Heading } from "theme-ui";
 import Modal from "../components/Modal";
 
 /*

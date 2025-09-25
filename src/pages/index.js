@@ -36,7 +36,14 @@ export default function Home() {
               <Button variant="cyber" sx={styles.hero.primaryBtn}>
                 Explore Our Projects
               </Button>
-              <Button variant="secondary" sx={styles.hero.secondaryBtn}>
+              <Button 
+                variant="secondary" 
+                sx={styles.hero.secondaryBtn} 
+                as="a" 
+                href="https://www.facebook.com/wrcrobo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Join the Club
               </Button>
             </Box>
