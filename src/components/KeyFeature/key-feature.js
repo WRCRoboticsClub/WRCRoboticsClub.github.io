@@ -7,10 +7,11 @@ import {data} from "./key-feature.data";
 
 export default function KeyFeature() {
   return (
-    <section sx={{ variant: "section.KeyFeature" }} id="feature">
+    <section sx={styles.section} id="feature">
       <Container sx={styles.container}>
         <SectionHeader
-          title="Achievements"
+          title="Our Focus Areas"
+          subtitle="What We Do"
         />
         <Grid sx={styles.grid}>
           {data.map((item) => (
@@ -29,27 +30,47 @@ export default function KeyFeature() {
 }
 
 const styles = {
-  container: {
-    marginTop: "100px",
+  section: {
+    py: [80, 100, 120],
+    position: "relative",
+    background: "linear-gradient(135deg, rgba(99, 102, 241, 0.02) 0%, rgba(0, 212, 255, 0.02) 50%, rgba(139, 92, 246, 0.02) 100%)",
+    
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: "url('/grid-pattern.svg')",
+      opacity: 0.03,
+      pointerEvents: "none",
+    },
   },
+  
+  container: {
+    position: "relative",
+    zIndex: 2,
+  },
+  
   grid: {
-    width: ["100%", "80%", "100%"],
+    width: ["100%", "90%", "100%"],
     mx: "auto",
     gridGap: [
-      "35px 0",
-      null,
+      "40px",
+      "50px",
       "40px 40px",
       "50px 60px",
-      "30px",
+      "40px",
       "50px 40px",
-      "55px 90px",
+      "60px 50px",
     ],
     gridTemplateColumns: [
-      "repeat(1,1fr)",
-      null,
-      "repeat(2,1fr)",
-      null,
-      "repeat(4,1fr)",
+      "repeat(1, 1fr)",
+      "repeat(2, 1fr)",
+      "repeat(2, 1fr)",
+      "repeat(3, 1fr)",
     ],
+    mt: [60, 80],
   },
 };

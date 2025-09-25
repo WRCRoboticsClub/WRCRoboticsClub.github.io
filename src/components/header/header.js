@@ -3,7 +3,6 @@ import { Container, Flex, Button, Select, Box } from "theme-ui";
 import { keyframes } from "@emotion/react";
 import Link from "next/link";
 import Logo from "../logo";
-import LogoDark from "../../assets/Club_logo.png";
 import MobileDrawer from "./mobile-drawer";
 import menuItems from "../../data/header.data";
 import { useRouter } from "next/router";
@@ -13,7 +12,7 @@ export default function Header({ className, isOpen, setIsOpen }) {
   return (
     <header sx={styles.header} className={className}>
       <Container sx={styles.container}>
-        <Logo src={LogoDark.src} sx={styles.container.logo} />
+        <Logo />
 
         <Flex as="nav" sx={styles.nav}>
           {menuItems.map((menuItem, index) => (
@@ -30,29 +29,19 @@ export default function Header({ className, isOpen, setIsOpen }) {
             </Link>
           ))}
         </Flex>
-{/*
-        <Box sx={styles.rightContainer}>
-        {<Select
-          name="committee"
-          defaultValue="17th-committee"
-          sx={styles.rightContainer.select}
-        >
-          <option value="17th-committee">17th executive committee</option>
-          <option value="16th-committee">16th executive committee</option>
-        </Select>}
 
-        <Button
-          // className="donate__btn"
-          variant="secondary"
-          aria-label="Get Started"
-          sx={styles.rightContainer.button}
-          onClick={() => router.push("/registerForm")}
-        >
-          Register you team now
-        </Button>
-        </Box> 
-         */}
-        <MobileDrawer isDrawerOpen={isOpen} setIsDrawerOpen={setIsOpen} />
+        <Box sx={styles.rightContainer}>
+          <Button
+            variant="primary"
+            aria-label="Get Started"
+            sx={styles.rightContainer.button}
+            onClick={() => router.push("/registerForm")}
+          >
+            Join Us
+          </Button>
+        </Box>
+
+        <MobileDrawer isOpen={isOpen} setIsOpen={setIsOpen} />
       </Container>
     </header>
   );
@@ -73,79 +62,115 @@ const positionAnim = keyframes`
 const styles = {
   header: {
     color: "text",
-    fontWeight: "body",
-    py: 3,
+    fontWeight: "body", 
+    py: 4,
     width: "100%",
     position: "absolute",
     top: 0,
     left: 0,
-    backgroundColor: "transparent",
+    background: "rgba(255, 255, 255, 0.8)",
+    backdropFilter: "blur(20px)",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
     transition: "all 0.4s ease",
-    animation: `${positionAnim} 0.4s ease`,
-    ".donate__btn": {
-      flexShrink: 0,
-      mr: [10, 15, null, null, 0],
-      ml: ["auto", null, null, null, 0],
-    },
+    zIndex: 100,
+    
     "&.sticky": {
       position: "fixed",
-      backgroundColor: "background",
-      color: "text",
-      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.08)",
-      py: 2,
+      background: "rgba(255, 255, 255, 0.95)",
+      backdropFilter: "blur(20px)",
+      borderBottom: "1px solid rgba(99, 102, 241, 0.1)",
+      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+      py: 3,
     },
   },
+
   container: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    px: [3, 4],
-    logo: {
-      width: ["140px", "180px", "200px"],
-      height: "auto",
-    },
-  },
-  nav: {
+    maxWidth: "1400px",
     mx: "auto",
-    display: "none",
-    "@media screen and (min-width: 1024px)": {
-      display: "flex",
-      gap: "20px",
-    },
+    px: [4, 6, 8],
+  },
+
+  nav: {
+    display: ["none", "none", "flex"],
+    alignItems: "center",
+    gap: 6,
+    
     a: {
-      fontSize: [2, 3],
-      fontWeight: 500,
-      px: 2,
-      cursor: "pointer",
-      lineHeight: "1.4",
-      transition: "color 0.25s ease",
-      color: "text",
+      fontSize: 2,
+      fontWeight: "medium",
+      color: "text_secondary",
+      textDecoration: "none",
+      position: "relative",
+      transition: "all 0.3s ease",
+      px: 3,
+      py: 2,
+      borderRadius: "md",
+      
       "&:hover": {
-        color: "secondary",
+        color: "primary",
+        background: "rgba(99, 102, 241, 0.05)",
       },
+      
+      "&::after": {
+        content: '""',
+        position: "absolute",
+        bottom: "-2px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: 0,
+        height: "2px",
+        background: "linear-gradient(90deg, #6366f1, #00d4ff)",
+        transition: "width 0.3s ease",
+      },
+      
+      "&:hover::after": {
+        width: "80%",
+      },
+
       "&.active": {
-        color: "secondary",
+        color: "primary",
       },
     },
   },
+
   rightContainer: {
     display: "flex",
     alignItems: "center",
-    gap: "10px",
+    gap: 4,
+
+    select: {
+      fontSize: 1,
+      border: "1px solid",
+      borderColor: "gray_200",
+      borderRadius: "md",
+      px: 3,
+      py: 2,
+      background: "background",
+      color: "text",
+      minWidth: "180px",
+    },
 
     button: {
-      fontSize: "14px",
-      fontWeight: "500",
-      ml: "5px",
-      px: "12px",
-      py: "8px",
-    },
-    select: {
-      fontSize: "15px",
-      fontWeight: "500",
-      px: "8px",
-      py: "6px",
-      borderRadius: "4px",
+      px: 5,
+      py: 3,
+      fontSize: 2,
+      fontWeight: "semibold",
+      borderRadius: "lg",
+      background: "linear-gradient(135deg, #6366f1, #4f46e5)",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+      boxShadow: "0 4px 15px rgba(99, 102, 241, 0.3)",
+      
+      "&:hover": {
+        background: "linear-gradient(135deg, #4f46e5, #4338ca)",
+        transform: "translateY(-2px)",
+        boxShadow: "0 6px 20px rgba(99, 102, 241, 0.4)",
+      },
     },
   },
 };

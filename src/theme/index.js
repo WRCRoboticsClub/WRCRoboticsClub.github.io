@@ -1,55 +1,36 @@
 export default {
-  colors: {
-    // Original colors from your first version
-    text: "#343D48",
-    text_secondary: "#02073E",
-    heading: "#0F2137",
-    heading_secondary: "#0F2137",
-    background: "#FFFFFF",
-    background_secondary: "#F9FBFD",
-    border_color: "#E5ECF4",
-    yellow: "#FFA740",
-    primary: "#57CDE2",  // Original teal primary
-    secondary: "#00008B", // Original deep blue secondary
-    muted: "#E4E4E4",
-    accent: "#609",
-    modes: {
-      dark: {
-        text: "#fff",
-        background: "#000",
-        primary: "#0cf",
-        secondary: "#09c",
-        muted: "#111",
-      },
-    },
-  },
-
   breakpoints: [
-    "480px",
-    "640px",
+    "576px",
     "768px",
-    "1024px",
-    "1220px",
-    "1366px",
-    "1620px",
+    "992px",
+    "1200px",
+    "1400px",
+    "1920px",
   ],
   
   fonts: {
-    body: "'DM Sans', sans-serif", // Original font
-    heading: "'DM Sans', sans-serif",
+    body: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    heading: "'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    mono: "'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace",
   },
   
-  fontSizes: [12, 15, 16, 18, 20, 22, 24, 28, 32, 36, 42, 48, 52, 64],
+  fontSizes: [
+    12, 14, 16, 18, 20, 24, 28, 32, 36, 42, 48, 56, 64, 72
+  ],
   
   fontWeights: {
-    body: "normal",
-    heading: 500,
+    body: 400,
+    medium: 500,
+    semibold: 600,
     bold: 700,
+    heading: 700,
   },
   
   lineHeights: {
-    body: 1.8,
-    heading: 1.5,
+    body: 1.6,
+    heading: 1.3,
+    tight: 1.2,
+    relaxed: 1.8,
   },
   
   letterSpacings: {
@@ -60,276 +41,304 @@ export default {
   
   space: [0, 5, 10, 15, 20, 25, 30, 50, 80, 100, 120, 150],
   
-  // Modern layout enhancements with original colors
-  layout: {
-    container: {
-      maxWidth: ["100%", null, null, "780px", "1020px", "1200px", null, "1310px"],
-      px: [4, 6],
-    },
-    header: {
-      color: "#02073E",
-      fontWeight: "normal",
+  sizes: {
+    container: "1400px",
+    containerSm: "1020px",
+    containerMd: "1200px",
+  },
+  
+  radii: {
+    none: 0,
+    sm: "4px",
+    md: "8px",
+    lg: "12px",
+    xl: "16px",
+    "2xl": "20px",
+    full: "9999px",
+  },
+  
+  shadows: {
+    sm: "0 1px 3px rgba(0, 0, 0, 0.1)",
+    md: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    lg: "0 10px 15px rgba(0, 0, 0, 0.1)",
+    xl: "0 20px 25px rgba(0, 0, 0, 0.1)",
+    "2xl": "0 25px 50px rgba(0, 0, 0, 0.15)",
+  },
+  
+  // Enhanced modern color palette for robotics
+  colors: {
+    // Core brand colors
+    primary: "#6366f1",        // Modern indigo
+    primary_light: "#818cf8",  // Light indigo
+    primary_dark: "#4f46e5",   // Dark indigo
+    secondary: "#00d4ff",      // Cyber cyan
+    accent: "#f59e0b",         // Warm amber
+    
+    // Semantic colors
+    success: "#10b981",        // Emerald
+    warning: "#f59e0b",        // Amber
+    error: "#ef4444",          // Red
+    info: "#3b82f6",           // Blue
+    
+    // Neutral palette
+    background: "#ffffff",
+    surface: "#f8fafc",
+    muted: "#f1f5f9",
+    
+    // Text colors
+    text: "#1e293b",           // Slate 800
+    text_secondary: "#64748b", // Slate 500
+    text_muted: "#94a3b8",     // Slate 400
+    text_inverted: "#ffffff",
+    
+    // Gray scale
+    gray_50: "#f8fafc",
+    gray_100: "#f1f5f9",
+    gray_200: "#e2e8f0",
+    gray_300: "#cbd5e1",
+    gray_400: "#94a3b8",
+    gray_500: "#64748b",
+    gray_600: "#475569",
+    gray_700: "#334155",
+    gray_800: "#1e293b",
+    gray_900: "#0f172a",
+    
+    // Additional semantic colors
+    white: "#ffffff",
+    black: "#000000",
+    transparent: "transparent",
+    
+    // Special effects
+    glass: "rgba(255, 255, 255, 0.25)",
+    glass_dark: "rgba(0, 0, 0, 0.25)",
+  },
+  
+  // Animation durations
+  transitions: {
+    fast: "0.2s ease",
+    normal: "0.3s ease", 
+    slow: "0.5s ease",
+  },
+  
+  // Button variants
+  buttons: {
+    primary: {
+      fontSize: 2,
+      fontWeight: "semibold",
+      color: "white",
+      bg: "linear-gradient(135deg, #6366f1, #4f46e5)",
+      border: 0,
+      borderRadius: "lg",
+      px: 5,
       py: 3,
-      position: "absolute",
-      width: "100%",
+      cursor: "pointer",
+      transition: "fast",
+      boxShadow: "0 4px 15px rgba(99, 102, 241, 0.3)",
+      "&:hover": {
+        bg: "linear-gradient(135deg, #4f46e5, #4338ca)",
+        transform: "translateY(-2px)",
+        boxShadow: "0 6px 20px rgba(99, 102, 241, 0.4)",
+      },
+    },
+    secondary: {
+      fontSize: 2,
+      fontWeight: "medium",
+      color: "primary",
       bg: "transparent",
-      backdropFilter: "blur(12px)",
+      border: "2px solid",
+      borderColor: "primary",
+      borderRadius: "lg",
+      px: 5,
+      py: 3,
+      cursor: "pointer",
+      transition: "fast",
+      "&:hover": {
+        bg: "primary",
+        color: "white",
+        transform: "translateY(-2px)",
+      },
     },
-  },
-  
-  // Modern section styling with original colors
-  sectionHeader: {
-    width: ["100%", null, "540px"],
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    mt: ["-3px", null, -1],
-    marginBottom: ["50px", null, "60px", null, null, "65px", null, "80px"],
-    mx: "auto",
-    title: {
-      fontSize: ["24px", null, "28px", null, null, "32px", null, "36px"],
-      color: "heading",
-      lineHeight: [1.3, null, null, 1.25],
-      textAlign: "center",
-      fontWeight: "700",
-      letterSpacing: "-.5px",
-      position: "relative",
-      "&:after": {
-        content: '""',
-        position: "absolute",
-        bottom: "-8px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "80px",
-        height: "4px",
-        bg: "primary", // Using original teal
-        borderRadius: "2px",
-      }
-    },
-    subTitle: {
-      fontSize: [0, "13px", null, "14px"],
-      color: "primary", // Teal accent
-      textAlign: "center",
-      letterSpacing: ["1.5px", null, "2px"],
+    cyber: {
+      fontSize: 2,
+      fontWeight: "bold",
+      color: "white",
+      bg: "linear-gradient(135deg, #00d4ff, #6366f1)",
+      border: 0,
+      borderRadius: "lg",
+      px: 5,
+      py: 3,
+      cursor: "pointer",
+      transition: "fast",
       textTransform: "uppercase",
-      fontWeight: "700",
-      mb: 2,
-      lineHeight: 1.5,
-      display: "inline-block",
-      bg: "rgba(87, 205, 226, 0.1)", // Teal with opacity
-      px: 3,
-      py: 1,
-      borderRadius: "20px",
+      letterSpacing: "1px",
+      boxShadow: "0 4px 15px rgba(0, 212, 255, 0.3)",
+      "&:hover": {
+        bg: "linear-gradient(135deg, #6366f1, #00d4ff)",
+        transform: "translateY(-2px)",
+        boxShadow: "0 6px 20px rgba(0, 212, 255, 0.4)",
+      },
     },
   },
   
-  // Modern text styles with original colors
+  // Form controls
+  forms: {
+    input: {
+      fontSize: 2,
+      px: 4,
+      py: 3,
+      border: "2px solid",
+      borderColor: "gray_200",
+      borderRadius: "lg",
+      bg: "background",
+      fontFamily: "body",
+      transition: "fast",
+      "&:focus": {
+        borderColor: "primary",
+        outline: "none",
+        boxShadow: "0 0 0 3px rgba(99, 102, 241, 0.1)",
+      },
+    },
+    textarea: {
+      fontSize: 2,
+      px: 4,
+      py: 3,
+      border: "2px solid",
+      borderColor: "gray_200",
+      borderRadius: "lg",
+      bg: "background",
+      fontFamily: "body",
+      resize: "vertical",
+      minHeight: "120px",
+      transition: "fast",
+      "&:focus": {
+        borderColor: "primary",
+        outline: "none",
+        boxShadow: "0 0 0 3px rgba(99, 102, 241, 0.1)",
+      },
+    },
+    label: {
+      fontSize: 1,
+      fontWeight: "medium",
+      color: "text",
+      mb: 2,
+      display: "block",
+    },
+  },
+  
+  // Card styles
+  cards: {
+    primary: {
+      bg: "white",
+      borderRadius: "xl",
+      p: 5,
+      boxShadow: "0 4px 25px rgba(0, 0, 0, 0.05)",
+      border: "1px solid",
+      borderColor: "gray_100",
+      transition: "fast",
+      "&:hover": {
+        transform: "translateY(-4px)",
+        boxShadow: "0 8px 40px rgba(0, 0, 0, 0.1)",
+      },
+    },
+    glass: {
+      background: "rgba(255, 255, 255, 0.25)",
+      borderRadius: "xl",
+      p: 5,
+      backdropFilter: "blur(20px)",
+      border: "1px solid rgba(255, 255, 255, 0.18)",
+      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+      transition: "fast",
+      "&:hover": {
+        background: "rgba(255, 255, 255, 0.35)",
+        transform: "translateY(-2px)",
+      },
+    },
+  },
+  
+  // Text variants
   text: {
     heading: {
       fontFamily: "heading",
-      lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: [4],
-      letterSpacing: "-.55px",
-      color: "heading",
+      lineHeight: "heading",
+      letterSpacing: "heading",
+      color: "text",
     },
-    heroPrimary: {
-      color: "heading",
-      fontSize: ["32px", "36px", "42px", "40px", "42px", "52px", "58px", "66px"],
-      lineHeight: [1.3, null, null, null, null, 1.2],
-      fontWeight: 700,
-      mb: [4, null, null, null, null, 5],
-    },
-    heroSecondary: {
-      fontSize: [2, null, "17px", null, null, "19px", 4],
-      lineHeight: [1.9, null, null, 2],
-      fontWeight: "body",
-      mb: 5,
-      px: [0, null, 5, 6, null, 8, 9],
-      color: "heading",
-    },
-    title: {
-      variant: "text.heading",
-      fontWeight: "bold",
-      fontSize: [3, null, 4],
-      lineHeight: 1.25,
-      mb: 1,
-    },
-    lead: {
-      fontSize: 40,
-      fontFamily: "DM Sans",
-      fontWeight: "500",
-      lineHeight: "60px",
-      letterSpacing: "-1.5px",
-      color: "#0F2137",
-    },
-    muted: {
-      lineHeight: "26px",
-      color: "muted",
-    },
-    secondary: {
-      fontWeight: 500,
-      color: "#00A99D",
-      lineHeight: "40px",
-    },
-  },
-  
-  // Modern buttons with original colors
-  buttons: {
-    defaultBtn: {
-      borderRadius: "45px",
-      fontSize: ["14px", null, null, 2],
-      letterSpacings: "-0.15px",
-      padding: ["12px 20px", null, "15px 30px"],
+    body: {
       fontFamily: "body",
-      cursor: "pointer",
-      lineHeight: 1.2,
-      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-      fontWeight: 500,
-      "&:focus": {
-        outline: 0,
-      },
-      "&:hover": {
-        transform: "translateY(-3px)",
-        boxShadow: "0 6px 12px rgba(0,0,0,0.1)",
-      },
+      fontWeight: "body",
+      lineHeight: "body",
+      color: "text",
     },
-    primary: {
-      variant: "buttons.defaultBtn",
-      color: "white",
-      bg: "primary", // Original teal
-      "&:hover": {
-        bg: "#4abfd4", // Slightly darker teal
-        boxShadow: "0 6px 12px rgba(87, 205, 226, 0.3)",
-      },
-    },
-    secondary: {
-      variant: "buttons.defaultBtn",
-      border: "2px solid",
-      borderColor: "primary", // Teal border
-      color: "primary", // Teal text
-      bg: "transparent",
-      "&:hover": {
-        color: "white",
-        bg: "primary", // Teal background
-      },
-    },
-    whiteButton: {
-      variant: "buttons.defaultBtn",
-      color: "heading_secondary",
-      bg: "white",
-      "&:hover": {
-        bg: "#f0f8ff", // Light blue background
-      },
+    caps: {
+      textTransform: "uppercase",
+      letterSpacing: "caps",
+      fontWeight: "bold",
+      fontSize: 1,
     },
   },
   
-  // Modern cards with original colors
-  cards: {
-    primary: {
-      padding: 2,
-      borderRadius: 4,
-      // Modern enhancements:
-      bg: "background",
-      borderRadius: "16px",
-      overflow: "hidden",
-      boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
-      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-      border: "1px solid",
-      borderColor: "border_color",
-      "&:hover": {
-        transform: "translateY(-5px)",
-        boxShadow: "0 12px 32px rgba(0,0,0,0.1)",
-        borderColor: "primary", // Teal accent on hover
-      },
+  // Layout styles
+  layout: {
+    container: {
+      maxWidth: "1400px",
+      mx: "auto",
+      px: [4, 6, 8],
     },
-    offer: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      flex: ["1 1 calc(50% - 16px)", "1 1 20%"],
-      minHeight: 130,
-      m: 2,
-      background: "#FFFFFF",
-      border: "1px solid #EDEFF6",
-      borderRadius: 5,
-      // Modern enhancements:
-      transition: "all 0.3s ease",
-      "&:hover": {
-        transform: "translateY(-3px)",
-        boxShadow: "0 6px 12px rgba(0,0,0,0.05)",
-      },
-    },
-    featureCard: {
-      display: "flex",
-      alignItems: "flex-start",
-      flexDirection: "row",
-      p: 3,
-      // Modern enhancements:
-      bg: "background",
-      borderRadius: "12px",
-      border: "1px solid",
-      borderColor: "border_color",
-      boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
-      transition: "all 0.3s ease",
-      "&:hover": {
-        transform: "translateY(-3px)",
-        boxShadow: "0 8px 16px rgba(0,0,0,0.08)",
-      },
+    header: {
+      bg: "rgba(255, 255, 255, 0.95)",
+      backdropFilter: "blur(20px)",
+      borderBottom: "1px solid rgba(99, 102, 241, 0.1)",
+      transition: "fast",
     },
   },
   
-  // Modern global styles
+  // Responsive utility styles
   styles: {
     root: {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-      fontSmoothing: "antialiased",
-      WebkitFontSmoothing: "antialiased",
-      MozOsxFontSmoothing: "grayscale",
-      "::selection": {
-        bg: "primary", // Teal selection
-        color: "white",
-      },
-      // Modal Global Style
-      ".modal-video-close-btn": {
-        cursor: "pointer",
-      },
-      ".modal-video-movie-wrap": {
-        margin: 6,
-        width: "auto",
-      },
-      // Smooth transitions for interactive elements
-      a: {
-        transition: "color 0.2s ease",
-        "&:hover": {
-          color: "primary", // Teal on hover
-        }
-      }
+      fontSize: 2,
+      color: "text",
+      bg: "background",
     },
-    // Divider styles
-    hr: {
-      border: 0,
-      borderBottom: "1px solid",
-      borderColor: "#D9E0E7",
-      my: 5,
+    h1: {
+      variant: "text.heading",
+      fontSize: [5, 6, 7],
     },
-    ul: {
-      listStyle: "none",
+    h2: {
+      variant: "text.heading",
+      fontSize: [4, 5, 6],
     },
-    srOnly: {
-      border: "0 !important",
-      clip: "rect(1px, 1px, 1px, 1px) !important",
-      clipPath: "inset(50%) !important",
-      height: "1px !important",
-      margin: "-1px !important",
-      overflow: "hidden !important",
-      padding: "0 !important",
-      position: "absolute !important",
-      width: "1px !important",
-      whiteSpace: "nowrap !important",
+    h3: {
+      variant: "text.heading",
+      fontSize: [3, 4, 5],
+    },
+    h4: {
+      variant: "text.heading",
+      fontSize: [2, 3, 4],
+    },
+    h5: {
+      variant: "text.heading",
+      fontSize: [1, 2, 3],
+    },
+    h6: {
+      variant: "text.heading",
+      fontSize: [0, 1, 2],
+    },
+    p: {
+      color: "text",
+      fontWeight: "body",
+      lineHeight: "body",
+    },
+    a: {
+      color: "primary",
+      textDecoration: "none",
+      transition: "fast",
+      "&:hover": {
+        color: "primary_dark",
+      },
     },
   },
 };

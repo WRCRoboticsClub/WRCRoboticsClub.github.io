@@ -2,7 +2,7 @@
 import { jsx, Box, Container, Image, Text, Heading } from "theme-ui";
 import { Link } from "../link";
 import menuItems from "../../data/footer.data";
-import FooterLogo from "../../assets/Club_logo.png";
+import FooterLogo from "../../assets/ClubLogo.jpg";
 import { FaFacebook, FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import Copyright from "./Copyright";
