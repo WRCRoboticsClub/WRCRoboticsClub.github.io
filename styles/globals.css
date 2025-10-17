@@ -738,6 +738,8 @@ a.link-animated:hover::after {
 }
 
 /* ===== DARK MODE SUPPORT ===== */
+/* Dark mode disabled as requested */
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-primary: #0f172a;
@@ -756,7 +758,8 @@ a.link-animated:hover::after {
       radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
       radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
   }
-}
+} */
+
 
 /* ===== ENHANCED ANIMATIONS ===== */
 @keyframes slideInUp {

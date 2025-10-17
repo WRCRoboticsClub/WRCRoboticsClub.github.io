@@ -687,6 +687,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== DARK MODE SUPPORT ===== */
+/* Dark mode disabled as requested */
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-primary: #0f172a;
@@ -710,6 +712,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--gray-200);
   }
 }
+*/
 
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
 .card,
