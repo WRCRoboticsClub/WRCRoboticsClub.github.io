@@ -18,5 +18,9 @@ export default [
   {
     path:'/feedbackForm',
     label:"Feedback Form"
+  },
+    {
+    path:"https://robotics-inventory.vercel.app",
+    label:"Inventory"
   }
 ];
