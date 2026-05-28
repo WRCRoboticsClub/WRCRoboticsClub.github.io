@@ -151,15 +151,15 @@ function toGoogleImageUrl(thumbnailUrl) {
 
 
 }
-export async function getStaticProps() {
-  const res = await fetch("https://wrcrobotics.pythonanywhere.com/committee");
-  const committeeData = await res.json();
+// export async function getStaticProps() {
+//   const res = await fetch("https://wrcrobotics.pythonanywhere.com/committee");
+//   const committeeData = await res.json();
 
-  return {
-    props: { committeeData },
-    revalidate: 10, // updates every 10 seconds
-  };
-}
+//   return {
+//     props: { committeeData },
+//     revalidate: 10, // updates every 10 seconds
+//   };
+// }
 
 const styles = {
   banner: {
