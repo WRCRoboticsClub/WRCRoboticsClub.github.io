@@ -150,16 +150,7 @@ function toGoogleImageUrl(thumbnailUrl) {
 }
 
 
-// export async function getStaticProps() {
-//   const res = await fetch(`https://wrcrobotics.pythonanywhere.com/committee`);
-//   const committeeData = await res.json();
-
-//   return {
-//     props: {
-//       committeeData,
-//     },
-//   };
-// }
+}
 export async function getStaticProps() {
   const res = await fetch("https://wrcrobotics.pythonanywhere.com/committee");
   const committeeData = await res.json();
