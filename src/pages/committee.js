@@ -10,10 +10,19 @@ const safeArray = (data) => (Array.isArray(data) ? data : []);
 
 const get = (obj, key) => safeArray(obj?.data?.[key]);
 
+// function toGoogleImageUrl(url = "") {
+//   const match = url.match(/id=([^&]+)/);
+//   if (!match) return url;
+//   return `https://lh3.googleusercontent.com/d/${match[1]}=w500`;
+// }
 function toGoogleImageUrl(url = "") {
-  const match = url.match(/id=([^&]+)/);
-  if (!match) return url;
-  return `https://lh3.googleusercontent.com/d/${match[1]}=w500`;
+  const fileId =
+    url.match(/\/d\/([^/]+)/)?.[1] ||
+    url.match(/id=([^&]+)/)?.[1];
+
+  if (!fileId) return url;
+
+  return `https://drive.google.com/uc?export=view&id=${fileId}`;
 }
 
 // -----------------------------
