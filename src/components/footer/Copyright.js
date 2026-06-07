@@ -13,7 +13,7 @@ export default function Copyright() {
         <Box sx={styles.designer}>
           <Text sx={styles.devName}>
             Managed By:
-            <Link href="https://bhandari-prashant.com.np"> Prashant Bhandari </Link>
+            <Link href="https://psabin62.github.io">Sabin Poudel</Link>
           </Text>
         </Box>
       </Box>
