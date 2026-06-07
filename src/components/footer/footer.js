@@ -72,14 +72,14 @@ export default function Footer() {
                 <Text sx={styles.contact.subTitle}>Shishir Babu Rijal</Text>
               </Box> */}
                 <Box sx={styles.contact.info}>
-                  <Text sx={styles.contact.phone}>+9779815035124</Text>
+                  <Text sx={styles.contact.phone}>+9779862228798</Text>
                   <Text sx={styles.contact.subTitle}>Executive Head</Text>
-                  <Text sx={styles.contact.subTitle}>Sandesh Ghorsai</Text>
+                  <Text sx={styles.contact.subTitle}>Diwas Sapkota</Text>
                 </Box>
                 <Box sx={styles.contact.info}>
-                  <Text sx={styles.contact.phone}>+9779840600635</Text>
+                  <Text sx={styles.contact.phone}>+9779846992773</Text>
                   <Text sx={styles.contact.subTitle}>Vice Executive Head</Text>
-                  <Text sx={styles.contact.subTitle}>Sumit Sigdel</Text>
+                  <Text sx={styles.contact.subTitle}>Kriti Paudel</Text>
                 </Box>
               </Box>
             </Box>
