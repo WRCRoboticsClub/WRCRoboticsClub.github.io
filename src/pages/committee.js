@@ -95,43 +95,43 @@ export default function Committee({ committeeData = {} }) {
 // -----------------------------
 // Data fetching
 // -----------------------------
-export async function getStaticProps() {
-  try {
-    const res = await fetch(
-      "https://wrcrobotics.pythonanywhere.com/committee"
-    );
-
-    const committeeData = await res.json();
-
-    return {
-      props: { committeeData },
-      revalidate: 10,
-    };
-  } catch (err) {
-    return {
-      props: { committeeData: {} },
-      revalidate: 10,
-    };
-  }
-}
-// export async function getServerSideProps() {
+// export async function getStaticProps() {
 //   try {
 //     const res = await fetch(
-//       "https://wrcrobotics.pythonanywhere.com/committee",
-//       { cache: "no-store" }
+//       "https://wrcrobotics.pythonanywhere.com/committee"
 //     );
 
 //     const committeeData = await res.json();
 
 //     return {
 //       props: { committeeData },
+//       revalidate: 10,
 //     };
 //   } catch (err) {
 //     return {
 //       props: { committeeData: {} },
+//       revalidate: 10,
 //     };
 //   }
 // }
+export async function getServerSideProps() {
+  try {
+    const res = await fetch(
+      "https://wrcrobotics.pythonanywhere.com/committee",
+      { cache: "no-store" }
+    );
+
+    const committeeData = await res.json();
+
+    return {
+      props: { committeeData },
+    };
+  } catch (err) {
+    return {
+      props: { committeeData: {} },
+    };
+  }
+}
 
 // -----------------------------
 // Styles (cleaned)
