@@ -58,7 +58,7 @@ export default function Committee({ committeeData = {} }) {
   };
 
   // -----------------------------
-  // Reusable renderer
+  // Reusable  renderer
   // -----------------------------
   const renderCards = (list = []) =>
     list.map((member, idx) => (
