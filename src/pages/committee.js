@@ -114,24 +114,24 @@ export async function getStaticProps() {
     };
   }
 }
-export async function getServerSideProps() {
-  try {
-    const res = await fetch(
-      "https://wrcrobotics.pythonanywhere.com/committee",
-      { cache: "no-store" }
-    );
+// export async function getServerSideProps() {
+//   try {
+//     const res = await fetch(
+//       "https://wrcrobotics.pythonanywhere.com/committee",
+//       { cache: "no-store" }
+//     );
 
-    const committeeData = await res.json();
+//     const committeeData = await res.json();
 
-    return {
-      props: { committeeData },
-    };
-  } catch (err) {
-    return {
-      props: { committeeData: {} },
-    };
-  }
-}
+//     return {
+//       props: { committeeData },
+//     };
+//   } catch (err) {
+//     return {
+//       props: { committeeData: {} },
+//     };
+//   }
+// }
 
 // -----------------------------
 // Styles (cleaned)
