@@ -50,18 +50,21 @@ export default function MobileDrawer({ isOpen, setIsOpen }) {
           />
           <Box sx={styles.menu}>
             {menuItems.map((menuItem, index) => (
-              <Link
-                activeClass="active"
-                href={menuItem.path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={index}
-              >
-                {menuItem.label}
-              </Link>
-            ))}
+                  <Link
+                    key={index}
+                    href={menuItem.path}
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {menuItem.label}
+                  </Link>
+                ))}
+          </Box>
+              <Box sx={styles.menu}>
           </Box>
           <Box sx={styles.menuFooter}>
             <Box sx={styles.social}>
